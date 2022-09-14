@@ -6,10 +6,10 @@
 
 struct pid_info
 {
-	int		*pid;
-	char	*name;
-	char	*root;
-	int		stack;
+	int		pid;
+	char		*name;
+	char		*root;
+	int		*stack;
 };
 
 
@@ -24,7 +24,9 @@ int	main(int ac, char **av) {
 	else
 		pid = atoi(av[1]);
 	ret = malloc(sizeof(struct pid_info));
+//	printf("PId %d\n", pid);
 	r = get_pid_info(ret, pid);
-	printf("PId %n\nName %s\n", ret->pid, ret->name);
+	printf("R=  %d\n", r);
+	printf("PId %d\nName %s\n", ret->pid, ret->name);
 	return (0);
 }
