@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 typedef struct s_leo {
-	const int	x;
+	int	x;
 } t_leo;
 
 int	main(void)
