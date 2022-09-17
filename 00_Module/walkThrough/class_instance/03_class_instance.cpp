@@ -15,7 +15,6 @@ int	Ensayo::bar(void) {
 	return (42);
 }
 
-
 int	main(void)
 {
 	Ensayo insta;
