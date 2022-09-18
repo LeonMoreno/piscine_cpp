@@ -1,15 +1,23 @@
 #Variables
-NAME	=	megaphone
-CC		=	g++
-CFLAGS	=	-Werror -Wall -Wextra -std=c++98
-RM		=	rm -rf
+NAME = megaphone
+CC = g++
+RM = rm -f
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-#Source files
-SRC_FILES	= megaphone.cpp
+SRC = megaphone.cpp
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME):	
+$(NAME): $(OBJ)
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
+clean:
+	$(RM) $(OBJ)
 
+fclean: clean
+	$(RM) $(NAME)
 
+re: fclean $(NAME)
+
+.PHONY: all clean fclean re
