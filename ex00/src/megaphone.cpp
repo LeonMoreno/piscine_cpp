@@ -3,16 +3,13 @@
 
 void	ft_megaphone(char **argv)
 {
-	int				i;
-	std::locale		loc;
+	std::locale loc;
 
-	i = 1;
-	while (argv[i])
+	while(++argv && *argv)
 	{
-		for (int j = 0; argv[i][j] != '\0'; j++)
-			std::cout <<  std::toupper(argv[i][j], loc);
+		for (char *s = *argv; *s != '\0'; s++)
+			std::cout << std::toupper (*s, loc);
 		std::cout << " ";
-		i++;
 	}
 	std::cout << std::endl;
 }
