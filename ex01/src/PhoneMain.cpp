@@ -11,11 +11,10 @@ void	ft_menu(PhoneBook *pb)
 		if (cmd == "ADD")
 			pb->add();
 		else if (cmd == "SEARCH")
-			pb->PrintContacts();
+			pb->search();
 	}
 
 }
-
 
 int	main(void)
 {

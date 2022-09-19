@@ -2,7 +2,8 @@
 # define CONTACT_HPP
 
 #include <iostream>
-#include <string>
+#include <string> //std::string
+#include <iomanip> // std::setw
 
 class Contact
 {

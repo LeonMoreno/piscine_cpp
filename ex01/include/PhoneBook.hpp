@@ -12,7 +12,9 @@ public:
 	PhoneBook(/* args */);
 	~PhoneBook();
 	void	add();
-	void	PrintContacts();
+	void	search();
+	int		ui_PhoneBook(Contact *c);
+	void	PrintContac(Contact *c, int i);
 
 };
 

@@ -7,7 +7,7 @@ CC 			= g++
 RM 			= rm -fr
 
 #Souces FIles
-SRC_FILES	= PhoneMain PhoneBook Contact
+SRC_FILES	= PhoneMain PhoneBook Contact Utils_PhoneBook
 
 #OBJS
 ##OBJ = $(SRC:.cpp=.o)

@@ -39,15 +39,20 @@ void	PhoneBook::add(void)
 	return ;
 }
 
-void	PhoneBook::PrintContacts(void)
+void	PhoneBook::search(void)
 {
-	int id;
+	int	i;
+	int	id_max;
+	std::string s;
 
-	id = 0;
-	while (this->contact[id].FirstName != "")
+	id_max = ui_PhoneBook(this->contact);
+	i = 100;
+	while (i < 0 || i > id_max - 1)
 	{
-		std::cout << this->contact[id].FirstName << std::endl;
-		id++;
+		std::cout << "Enter index Contact: ";
+		std::getline(std::cin, s);
+		i = std::stoi(s);
 	}
+	PrintContac(this->contact, i);
 }
 
