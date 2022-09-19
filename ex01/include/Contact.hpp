@@ -8,20 +8,24 @@
 class Contact
 {
 private:
-	/* data */
+	int			_id;
+	std::string	_FirstName;
+	std::string	_LastName;
+	std::string	_NickName;
+	std::string	_PhoneNum;
+	std::string	_Secret;
 public:
-	int			id;
-	std::string	FirstName;
-	std::string	LastName;
-	std::string	NickName;
-	std::string	PhoneNum;
-	std::string	Secret;
-
-	void	SetFname(int id, std::string s);
-	void	SetLname(std::string s);
-	void	SetNname(std::string s);
-	void	SetPhoNum(std::string s);
-	void	SetSecret(std::string s);
+	std::string	GetLname(void);
+	std::string	GetFname(void);
+	std::string	GetNname(void);
+	std::string	GetPhoNum(void);
+	std::string	GetSecret(void);
+	int			GetId(void);
+	void		SetFname(int id, std::string s);
+	void		SetLname(std::string s);
+	void		SetNname(std::string s);
+	void		SetPhoNum(std::string s);
+	void		SetSecret(std::string s);
 
 	Contact(/* args */);
 	~Contact();

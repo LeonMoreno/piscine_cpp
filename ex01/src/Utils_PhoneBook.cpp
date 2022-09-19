@@ -37,14 +37,14 @@ int	PhoneBook::ui_PhoneBook(Contact *c)
 
 	id = 0;
 	PrintHeader();
-	while (c[id].FirstName != "")
+	while (c[id].GetFname() != "")
 	{
 		std::cout << "|";
 		std::cout << std::setw(10);
-		std::cout << c[id].id << "|" << std::setw(10) << std::right;
-		std::cout << CheckStr(c[id].FirstName) << "|" << std::setw(10) << std::right;
-		std::cout << CheckStr(c[id].LastName) << "|" << std::setw(10) << std::right;
-		std::cout << CheckStr(c[id].NickName) << "|"; //<< std::setw(10) << std::right;
+		std::cout << c[id].GetId() << "|" << std::setw(10) << std::right;
+		std::cout << CheckStr(c[id].GetFname()) << "|" << std::setw(10) << std::right;
+		std::cout << CheckStr(c[id].GetLname()) << "|" << std::setw(10) << std::right;
+		std::cout << CheckStr(c[id].GetNname()) << "|";
 		std::cout << std::endl;
 		id++;
 	}
@@ -55,10 +55,11 @@ int	PhoneBook::ui_PhoneBook(Contact *c)
 
 void	PhoneBook::PrintContac(Contact *c, int i)
 {
-	std::cout << c[i].FirstName << std::endl;
-	std::cout << c[i].LastName << std::endl;
-	std::cout << c[i].NickName << std::endl;
-	std::cout << c[i].PhoneNum << std::endl;
-	std::cout << c[i].Secret << std::endl;
+	std::cout << "\n *** Contact INFO ***\n" << std::endl;
+	std::cout << "First Name: " << c[i].GetFname() << std::endl;
+	std::cout << "Last Name: " << c[i].GetLname() << std::endl;
+	std::cout << "NickName: " << c[i].GetNname() << std::endl;
+	std::cout << "Phone number: " << c[i].GetPhoNum() << std::endl;
+	std::cout << "Secret: " << c[i].GetSecret() << std::endl << std::endl;
 }
 

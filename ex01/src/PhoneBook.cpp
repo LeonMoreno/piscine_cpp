@@ -3,13 +3,13 @@
 PhoneBook::PhoneBook()
 {
 	this->_id = 0;
-	std::cout << "\n\t ## Welcome to PhoneBook! ##" << std::endl;
+	std::cout << "\n\t ## Welcome to PhoneBook! ##" << std::endl << std::endl;
 	return ;
 }
 
 PhoneBook::~PhoneBook()
 {
-	std::cout << "DESTRUCTOR" << std::endl;
+	std::cout << "Good bye" << std::endl;
 }
 
 std::string	ValidStr(std::string s)
@@ -34,7 +34,7 @@ void	PhoneBook::add(void)
 	this->contact[this->_id].SetNname(ValidStr("✗ Enter Nick Name: "));
 	this->contact[this->_id].SetPhoNum(ValidStr("✗ Enter Phone Number: "));
 	this->contact[this->_id].SetSecret(ValidStr("✗ Enter Dark Secret: "));
-	std::cout << "Contact Saved - " << this->contact[this->_id].FirstName << std::endl;
+	std::cout << "** Contact Saved: " << this->contact[this->_id].GetFname() << std::endl << std::endl;
 	this->_id++;
 	return ;
 }
@@ -49,10 +49,12 @@ void	PhoneBook::search(void)
 	i = 100;
 	while (i < 0 || i > id_max - 1)
 	{
-		std::cout << "Enter index Contact: ";
-		std::getline(std::cin, s);
+		s = ValidStr("Enter index Contact: ");
 		i = std::stoi(s);
+		if (i < 0 || i > id_max - 1)
+			std::cout << "Bad Index " << std::endl;
 	}
+	system("clear");
 	PrintContac(this->contact, i);
 }
 
