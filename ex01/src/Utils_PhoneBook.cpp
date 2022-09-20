@@ -31,13 +31,13 @@ std::string	CheckStr(std::string s)
 	return (s);
 }
 
-int	PhoneBook::ui_PhoneBook(Contact *c)
+int	PhoneBook::ui_PhoneBook(Contact *c) const
 {
 	int id;
 
 	id = 0;
 	PrintHeader();
-	while (c[id].GetFname() != "")
+	while (c[id].GetFname() != "" && id <= 7)
 	{
 		std::cout << "|";
 		std::cout << std::setw(10);
@@ -53,7 +53,7 @@ int	PhoneBook::ui_PhoneBook(Contact *c)
 	return (id);
 }
 
-void	PhoneBook::PrintContac(Contact *c, int i)
+void	PhoneBook::PrintContac(Contact *c, int i) const
 {
 	std::cout << "\n *** Contact INFO ***\n" << std::endl;
 	std::cout << "First Name: " << c[i].GetFname() << std::endl;

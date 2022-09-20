@@ -15,12 +15,12 @@ private:
 	std::string	_PhoneNum;
 	std::string	_Secret;
 public:
+	int			GetId(void);
 	std::string	GetLname(void);
 	std::string	GetFname(void);
 	std::string	GetNname(void);
 	std::string	GetPhoNum(void);
 	std::string	GetSecret(void);
-	int			GetId(void);
 	void		SetFname(int id, std::string s);
 	void		SetLname(std::string s);
 	void		SetNname(std::string s);

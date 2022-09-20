@@ -13,8 +13,8 @@ public:
 	~PhoneBook();
 	void	add();
 	void	search();
-	int		ui_PhoneBook(Contact *c);
-	void	PrintContac(Contact *c, int i);
+	int		ui_PhoneBook(Contact *c) const;
+	void	PrintContac(Contact *c, int i) const;
 
 };
 

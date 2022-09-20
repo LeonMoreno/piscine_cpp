@@ -29,6 +29,11 @@ std::string	ValidStr(std::string s)
 
 void	PhoneBook::add(void)
 {
+	if (this->_id > 7)
+	{
+		std::cout << "Limit reached\n";
+		this->_id = 0;
+	}
 	this->contact[this->_id].SetFname(this->_id, ValidStr("✗ Enter First Name: "));
 	this->contact[this->_id].SetLname(ValidStr("✗ Enter Last Name: "));
 	this->contact[this->_id].SetNname(ValidStr("✗ Enter Nick Name: "));
@@ -39,18 +44,23 @@ void	PhoneBook::add(void)
 	return ;
 }
 
-void	PhoneBook::search(void)
+void	PhoneBook::search (void)
 {
 	int	i;
 	int	id_max;
 	std::string s;
-
+	if (this->contact[0].GetFname() == "")
+	{
+		std::cout << "Sorry empty PhoneBook" << std::endl;
+		return ;
+	}
 	id_max = ui_PhoneBook(this->contact);
 	i = 100;
 	while (i < 0 || i > id_max - 1)
 	{
 		s = ValidStr("Enter index Contact: ");
-		i = std::stoi(s);
+		if (s[0] >= '0' && s[0] <= '9')
+			i = std::stoi(s);
 		if (i < 0 || i > id_max - 1)
 			std::cout << "Bad Index " << std::endl;
 	}
