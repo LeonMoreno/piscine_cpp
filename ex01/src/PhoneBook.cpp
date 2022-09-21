@@ -64,7 +64,7 @@ void	PhoneBook::search (void)
 		if (i < 0 || i > id_max - 1)
 			std::cout << "Bad Index " << std::endl;
 	}
-	system("clear");
+	system("clear"); // std::cout << "\033[2J\033[1;1H";
 	PrintContac(this->contact, i);
 }
 

@@ -1,5 +1,5 @@
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef __CONTACT_HPP__
+# define __CONTACT_HPP__
 
 #include <iostream>
 #include <string> //std::string
