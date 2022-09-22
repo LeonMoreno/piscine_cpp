@@ -3,6 +3,7 @@
 Zombie::Zombie()
 {
 	std::cout << "zombie creado" << std::endl;
+	// Zombie::announce();
 	return;
 }
 
