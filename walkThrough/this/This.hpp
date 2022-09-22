@@ -10,6 +10,7 @@ class This {
 	This(void);
 	~This(void);
 	void	ejem(void);
+	std::string algo(void);
 };
 
 #endif
