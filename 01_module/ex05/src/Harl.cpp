@@ -12,8 +12,8 @@ Harl::~Harl()
 
 void	Harl::_debug( void )
 {
-	std::cout << "I love having extra bacon for my \
-		7XL-double-cheese-triple-pickle-special- ketchup burger. I really do!" << std::endl;
+	std::cout << "I love having extra bacon for my";
+	std::cout << "7XL-double-cheese-triple-pickle-special- ketchup burger. I really do!" << std::endl;
 	return ;
 }
 
@@ -40,9 +40,25 @@ void	Harl::_error ( void )
 void	Harl::complain( std::string level )
 {
 	// void	(Harl::*func)() = &Harl::_debug;
-	if (level == "debug")
+// // 		void	(Harl::*func)() = &Harl::_debug;
+// // 		(this->*func)();	}
+
+	switch (strToint(level))
 	{
-		void	(Harl::*func)() = &Harl::_debug;
-		(this->*func)();
+	case	359: //DEBUG
+		std::cout << "Aqui DEBUG\n";
+		break;
+	case	300: //INFO
+		std::cout << "Aqui INFO\n";
+		break;
+	case	534: // WARNING
+		std::cout << "Aqui WARNING\n";
+		break;
+	case	394: // ERROR
+		std::cout << "Aqui ERROR\n";
+		break;
+	default:
+		std::cout << "Aqui NINGUNO\n";
+		break;
 	}
-}
+ }
