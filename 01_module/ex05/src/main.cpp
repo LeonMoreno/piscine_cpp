@@ -21,7 +21,7 @@ int	main(void)
 	Harl *harl;
 
 	harl = new Harl();
-	harl->complain("ERROR");
+	harl->complain("WARNING");
 
 	return (0);
 }
