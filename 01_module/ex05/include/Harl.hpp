@@ -28,4 +28,6 @@ public:
     // void    (Harl::*func)(); Lo deje en la func
 };
 
+int strToint    (std::string s);
+
 #endif
