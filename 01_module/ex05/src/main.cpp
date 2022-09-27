@@ -5,7 +5,7 @@ int	main(void)
 	Harl *harl;
 
 	harl = new Harl();
-	harl->complain("debug");
+	harl->complain("DEBUG");
 
 	return (0);
 }

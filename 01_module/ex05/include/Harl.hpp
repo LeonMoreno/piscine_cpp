@@ -4,6 +4,15 @@
 #include <iostream>
 #include <string>
 
+#define DEB 0
+enum
+{
+    DEBUG,
+    INFO,
+    WARNING,
+    ERROR
+};
+
 class Harl
 {
 private:
