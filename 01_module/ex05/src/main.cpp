@@ -8,7 +8,8 @@ int	strToint(std::string s)
 	i = 0;
 	r = 0;
 
-	while (s[i])
+	while (s[i] && (s == "DEBUG" || s == "INFO"
+		|| s == "WARNING" || s == "ERROR"))
 	{
 		r += s[i];
 		i++;
