@@ -7,7 +7,8 @@ int	strToint( std::string s)
 
 	i = 0;
 	r = 0;
-	while (s[i])
+	while (s[i] && (s == "DEBUG" || s == "INFO"
+		|| s == "WARNING" || s == "ERROR"))
 	{
 		r += s[i];
 		i++;
@@ -18,12 +19,12 @@ int	strToint( std::string s)
 int	main(int argc, char **argv)
 {
 	Harl *h;
-       
+
 	h = new Harl();
 	switch (argc)
 	{
 		case 2:
-			h->complain(argv[1]); 
+			h->complain(argv[1]);
 			break;
 		default:
 			std::cout << "Invalid argus number" << std::endl;
