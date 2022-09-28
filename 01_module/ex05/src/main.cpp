@@ -21,7 +21,7 @@ int	main(void)
 	Harl *harl;
 
 	harl = new Harl();
-	harl->complain("GUBED");
+	harl->complain("DEBUG");
 
 	return (0);
 }
