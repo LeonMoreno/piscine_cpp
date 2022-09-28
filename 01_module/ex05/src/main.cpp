@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lmoreno <lmoreno@student.42quebec.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/28 16:44:20 by lmoreno           #+#    #+#             */
+/*   Updated: 2022/09/28 16:44:21 by lmoreno          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 
 int	strToint(std::string s)
@@ -22,7 +34,7 @@ int	main(void)
 	Harl *harl;
 
 	harl = new Harl();
-	harl->complain("DEBUG");
+	harl->complain("ERROR");
 
 	return (0);
 }
