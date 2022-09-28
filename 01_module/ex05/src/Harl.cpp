@@ -44,30 +44,21 @@ void	Harl::complain( std::string level )
 
 	switch (strToint(level))
 	{
-	case	359:   {//DEBUG
+	case	359:   //DEBUG
 		(this->*func[0])();
-		}
 		break;
-	case	300: { //INFO
+	case	300:  //INFO
 		(this->*func[0])();
-		(this->*func[1])();
-		}
+		
 		break;
-	case	534:  { // WARNING
-		(this->*func[0])();
-		(this->*func[1])();
+	case	534:   // WARNING
 		(this->*func[2])();
-		}
 		break;
-	case	394: { // ERROR
-		(this->*func[0])();
-		(this->*func[1])();
-		(this->*func[2])();
+	case	394:  // ERROR
 		(this->*func[3])();
-		}
 		break;
 	default:
-		break;
+		std::cout << "Not Match\n";	
 	}
 
  }
