@@ -1,0 +1,27 @@
+#ifndef FIXED_HPP
+# define FIXED_HPP
+
+#include <iostream>
+
+class Fixed {
+
+	private:
+			int					_fixPointNum;
+			static const int	_fracBits;
+
+	public:
+			Fixed( void ); // Contructor Default CANONICAL
+			Fixed( Fixed const & src); // Contructor copy CANONICAL
+			Fixed & operator=( Fixed const & rhs); // // Contructor por Asignation CANONICAL
+			Fixed( int const num );
+			Fixed( float const num );
+			~Fixed( void ); // Destructor CANONICAL
+
+			int		getRawBits( void ) const;
+			void	setRawBits( int const raw );
+};
+
+//std::ostream operator<<( std::ostream & o, Fixed &f );
+void	ft_printf(Fixed & f);
+
+#endif
