@@ -2,6 +2,8 @@
 # define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
+#include <string>
 
 class Fixed {
 
@@ -19,7 +21,8 @@ class Fixed {
 
 			int		getRawBits( void ) const;
 			void	setRawBits( int const raw );
-			float		ft_pow(int base, int expo);
+			float	ft_pow(int base, int expo) const;
+			float	toFloat(int num) const;
 };
 
 std::ostream & operator<<( std::ostream & o, Fixed const &f );

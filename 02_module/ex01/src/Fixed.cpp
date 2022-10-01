@@ -41,29 +41,39 @@ int	Fixed::getRawBits( void ) const {
 	return (this->_fixPointNum);
 }
 
-float	ft_pow(int base, int expo)
+float	Fixed::ft_pow(int base, int expo) const
 {
 	float	res;
+	int		pow = expo;
 
-	res = base;
-	while (expo < 0)
+	if (expo < 0)
+		expo *= -1;
+	res = 1;
+	while (expo > 0)
 	{
 		res *= base;
-		expo++;
+		expo--;
 	}
+	if (pow < 0)
+		res = 1 / res;
 	return (res);
+}
+
+float	Fixed::toFloat(int	num) const
+{
+	return (num * ft_pow(2, -_fracBits));
 }
 
 std::ostream & operator<<( std::ostream & o, Fixed const & f) {
 	// int	enter = 0;;
-	// float	frac = 7;
+	// float	frac = 0;
 	// std::string ss;
 
 	// int	j = 23;
 	// for (int i = 0; i < 24; i++ )
 	// {
 	// 	if (f.getRawBits() & (2147483648 >> i))
-	// 			enter += pow(2, j);
+	// 			enter += (pow(2, j));
 	// 	j--;
 	// }
 	// j = -8;
@@ -73,16 +83,17 @@ std::ostream & operator<<( std::ostream & o, Fixed const & f) {
 	// 		frac += pow(2, j);
 	// 	j++;
 	// }
-	// if ( frac != 7)
-	// {
+
 	// 	ss = std::to_string(frac);
-	// 	ss.erase(0, 1);
-	// }
-	// o << enter << ss;
-	(void) f;
-	std::cout << "potencia " << ft_pow(2, -8) << std::endl;
-	float res =   (1 >> 8);
-	std::cout << "res = " << res << std::endl;
+	// 	std::string s2 = ss.substr(1, 4);
+
+	// std::cout << " ENTER = " << enter << std::endl;
+	// std::cout << " FRAC = " << frac << std::endl;
+	// o << enter << frac;
+
+
+	float res =  f.toFloat(f.getRawBits());
+
 	o << res;
 	return o;
 }
