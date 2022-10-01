@@ -94,8 +94,7 @@ std::ostream & operator<<( std::ostream & o, Fixed const & f) {
 
 	float res =  f.toFloat(f.getRawBits());
 
-	o << res;
-	return o;
+	return (o << res);
 }
 
 int const	Fixed::_fracBits = 8;
