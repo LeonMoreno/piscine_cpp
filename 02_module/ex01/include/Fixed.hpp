@@ -22,7 +22,8 @@ class Fixed {
 			int		getRawBits( void ) const;
 			void	setRawBits( int const raw );
 			float	ft_pow(int base, int expo) const;
-			float	toFloat(int num) const;
+			float	toFloat( void ) const;
+			int	toInt( void ) const;
 };
 
 std::ostream & operator<<( std::ostream & o, Fixed const &f );

@@ -15,7 +15,6 @@ Fixed & Fixed::operator=( Fixed const & rhs) {
 	std::cout << "Copy assignment operator constructor called" << std::endl;
 	this->_fixPointNum = rhs.getRawBits();
 	return (*this);
-
 }
 
 Fixed::~Fixed( void ) {
@@ -24,25 +23,26 @@ Fixed::~Fixed( void ) {
 }
 
 Fixed::Fixed( int const num) {
-	std::cout << "Conver INT constructor called" << std::endl;
-
-	this->_fixPointNum = roundf(num * (1 << _fracBits));
-	//std::cout << _fixPointNum << std::endl;
+	std::cout << "INT constructor called" << std::endl;
+	this->setRawBits(num);
+	// std::cout << _fixPointNum << std::endl;
 }
 
 Fixed::Fixed( float const num) {
-	std::cout << "Conver FLOAT constructor called" << std::endl;
+	std::cout << "FLOAT constructor called" << std::endl;
+	this->setRawBits(num);
+	// std::cout << _fixPointNum << std::endl;
+}
 
-	this->_fixPointNum = roundf(num * (1 << _fracBits));
-	std::cout << _fixPointNum << std::endl;
+void	Fixed::setRawBits( int const raw ) {
+	this->_fixPointNum = roundf(raw * (1 << _fracBits));
 }
 
 int	Fixed::getRawBits( void ) const {
 	return (this->_fixPointNum);
 }
 
-float	Fixed::ft_pow(int base, int expo) const
-{
+float	Fixed::ft_pow(int base, int expo) const {
 	float	res;
 	int		pow = expo;
 
@@ -59,40 +59,50 @@ float	Fixed::ft_pow(int base, int expo) const
 	return (res);
 }
 
-float	Fixed::toFloat(int	num) const
-{
-	return (num * ft_pow(2, -_fracBits));
+/**
+ * Mucho mas facil : usar la operacion contraria a la multiplicacion : div
+ * this->getRawBits() / (1 << _fracBits)); -- Es todo.
+ * Despues de 4 dias -- Solo era dividir./ LoL
+*/
+float	Fixed::toFloat( void ) const {
+	return (this->getRawBits() * ft_pow(2, -_fracBits));
+}
+
+int	Fixed::toInt( void ) const {
+	return (this->getRawBits() / (1 << _fracBits));
 }
 
 std::ostream & operator<<( std::ostream & o, Fixed const & f) {
-	// int	enter = 0;;
-	// float	frac = 0;
-	// std::string ss;
+/* // Intente obtener el numero comparando bit a bit.
+	// Un solo problema, la parte fracccionaria 0.42 / quitar el 0
+	int	enter = 0;;
+	float	frac = 0;
+	std::string ss;
 
-	// int	j = 23;
-	// for (int i = 0; i < 24; i++ )
-	// {
-	// 	if (f.getRawBits() & (2147483648 >> i))
-	// 			enter += (pow(2, j));
-	// 	j--;
-	// }
-	// j = -8;
-	// for (int i = 0; i <= 8; i++)
-	// {
-	// 	if (f.getRawBits() & (1 << i))
-	// 		frac += pow(2, j);
-	// 	j++;
-	// }
+	int	j = 23;
+	for (int i = 0; i < 24; i++ )
+	{
+		if (f.getRawBits() & (2147483648 >> i))
+				enter += (pow(2, j));
+		j--;
+	}
+	j = -8;
+	for (int i = 0; i <= 8; i++)
+	{
+		if (f.getRawBits() & (1 << i))
+			frac += pow(2, j);
+		j++;
+	}
 
-	// 	ss = std::to_string(frac);
-	// 	std::string s2 = ss.substr(1, 4);
+		ss = std::to_string(frac);
+		std::string s2 = ss.substr(1, 4);
 
-	// std::cout << " ENTER = " << enter << std::endl;
-	// std::cout << " FRAC = " << frac << std::endl;
-	// o << enter << frac;
+	std::cout << " ENTER = " << enter << std::endl;
+	std::cout << " FRAC = " << frac << std::endl;
+	o << enter << frac; */
 
 
-	float res =  f.toFloat(f.getRawBits());
+	float res =  f.toFloat();
 
 	return (o << res);
 }
