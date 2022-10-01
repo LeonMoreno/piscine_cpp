@@ -19,9 +19,9 @@ class Fixed {
 
 			int		getRawBits( void ) const;
 			void	setRawBits( int const raw );
+			float		ft_pow(int base, int expo);
 };
 
-//std::ostream operator<<( std::ostream & o, Fixed &f );
-void	ft_printf(Fixed & f);
+std::ostream & operator<<( std::ostream & o, Fixed const &f );
 
 #endif

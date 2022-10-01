@@ -34,40 +34,57 @@ Fixed::Fixed( float const num) {
 	std::cout << "Conver FLOAT constructor called" << std::endl;
 
 	this->_fixPointNum = roundf(num * (1 << _fracBits));
-//	std::cout << _fixPointNum << std::endl;
+	std::cout << _fixPointNum << std::endl;
 }
 
 int	Fixed::getRawBits( void ) const {
 	return (this->_fixPointNum);
 }
 
-//std::ostream operator<<( std::ostream & o, Fixed & f) {
-void	ft_printf(Fixed & f) {
-	int	enter = 0;;
-	float	frac = 7;
-	std::string ss;
+float	ft_pow(int base, int expo)
+{
+	float	res;
 
-	int	j = 23;
-	for (int i = 0; i < 24; i++ )
+	res = base;
+	while (expo < 0)
 	{
-		if (f.getRawBits() & (2147483648 >> i))
-				enter += pow(2, j);
-		j--;
+		res *= base;
+		expo++;
 	}
-	j = -8;
-	for (int i = 0; i <= 8; i++)
-	{
-		if (f.getRawBits() & (1 << i))
-			frac += pow(2, j);
-		j++;
-	}
-	if ( frac != 7)
-	{
-		ss = std::to_string(frac);
-		ss.erase(0, 1);
-	}
-	std::cout << enter;
-	std::cout << ss << std::endl;
+	return (res);
+}
+
+std::ostream & operator<<( std::ostream & o, Fixed const & f) {
+	// int	enter = 0;;
+	// float	frac = 7;
+	// std::string ss;
+
+	// int	j = 23;
+	// for (int i = 0; i < 24; i++ )
+	// {
+	// 	if (f.getRawBits() & (2147483648 >> i))
+	// 			enter += pow(2, j);
+	// 	j--;
+	// }
+	// j = -8;
+	// for (int i = 0; i <= 8; i++)
+	// {
+	// 	if (f.getRawBits() & (1 << i))
+	// 		frac += pow(2, j);
+	// 	j++;
+	// }
+	// if ( frac != 7)
+	// {
+	// 	ss = std::to_string(frac);
+	// 	ss.erase(0, 1);
+	// }
+	// o << enter << ss;
+	(void) f;
+	std::cout << "potencia " << ft_pow(2, -8) << std::endl;
+	float res =   (1 >> 8);
+	std::cout << "res = " << res << std::endl;
+	o << res;
+	return o;
 }
 
 int const	Fixed::_fracBits = 8;

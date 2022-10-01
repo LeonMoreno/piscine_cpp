@@ -2,10 +2,9 @@
 
 int	main( void )
 {
-	Fixed f(2.5f);
+	Fixed f(42.42f);
 
-	// std::cout << "size INT = " << sizeof(int) << std::endl;
-	ft_printf(f);
+	std::cout << f << std::endl;
 
 	return (0);
 }
