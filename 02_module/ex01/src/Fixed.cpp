@@ -24,18 +24,31 @@ Fixed::~Fixed( void ) {
 
 Fixed::Fixed( int const num) {
 	std::cout << "INT constructor called" << std::endl;
-	this->setRawBits(num);
+	this->setRawBits(roundf(num * (1 << _fracBits)));
 	// std::cout << _fixPointNum << std::endl;
+}
+
+int	Fixed::toInt( void ) const {
+	return (this->getRawBits() / (1 << _fracBits));
 }
 
 Fixed::Fixed( float const num) {
 	std::cout << "FLOAT constructor called" << std::endl;
-	this->setRawBits(num);
-	// std::cout << _fixPointNum << std::endl;
+	this->setRawBits(roundf(num * (1 << _fracBits)));
+	std::cout << _fixPointNum << std::endl;
+}
+
+/**
+ * Mucho mas facil : usar la operacion contraria a la multiplicacion : div
+ * this->getRawBits() / (1 << _fracBits)); -- Es todo.
+ * Despues de 4 dias -- Solo era dividir./ LoL
+*/
+float	Fixed::toFloat( void ) const {
+	return (this->getRawBits() * ft_pow(2, -_fracBits));
 }
 
 void	Fixed::setRawBits( int const raw ) {
-	this->_fixPointNum = roundf(raw * (1 << _fracBits));
+	this->_fixPointNum = raw;
 }
 
 int	Fixed::getRawBits( void ) const {
@@ -57,19 +70,6 @@ float	Fixed::ft_pow(int base, int expo) const {
 	if (pow < 0)
 		res = 1 / res;
 	return (res);
-}
-
-/**
- * Mucho mas facil : usar la operacion contraria a la multiplicacion : div
- * this->getRawBits() / (1 << _fracBits)); -- Es todo.
- * Despues de 4 dias -- Solo era dividir./ LoL
-*/
-float	Fixed::toFloat( void ) const {
-	return (this->getRawBits() * ft_pow(2, -_fracBits));
-}
-
-int	Fixed::toInt( void ) const {
-	return (this->getRawBits() / (1 << _fracBits));
 }
 
 std::ostream & operator<<( std::ostream & o, Fixed const & f) {
@@ -100,11 +100,8 @@ std::ostream & operator<<( std::ostream & o, Fixed const & f) {
 	std::cout << " ENTER = " << enter << std::endl;
 	std::cout << " FRAC = " << frac << std::endl;
 	o << enter << frac; */
-
-
-	float res =  f.toFloat();
-
-	return (o << res);
+	
+	return (o << f.toFloat());
 }
 
 int const	Fixed::_fracBits = 8;
