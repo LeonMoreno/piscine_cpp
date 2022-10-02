@@ -101,8 +101,10 @@ Fixed	Fixed::operator++() {
 }
 
 Fixed	Fixed::operator++(int) {
+	Fixed t(*this);
+
 	this->_fixPointNum += 1;
-	return (*this);
+	return (t);
 }
 
 Fixed	Fixed::operator--() {
@@ -111,8 +113,10 @@ Fixed	Fixed::operator--() {
 }
 
 Fixed	Fixed::operator--(int) {
+	Fixed t(*this);
+
 	this->_fixPointNum -= 1;
-	return (*this);
+	return (t);
 }
 
 /* special  functions */
