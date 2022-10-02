@@ -2,7 +2,7 @@
 
 /* Constructor and Destructor */
 Fixed::Fixed( void ) : _fixPointNum(0) {
-	// std::cout << "Default Constructor called" << std::endl;
+	std::cout << "Default FIX Constructor called" << std::endl;
 	return ;
 }
 
