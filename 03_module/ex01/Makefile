@@ -7,7 +7,7 @@ CC 			= g++
 RM 			= rm -fr
 
 #Souces FIles
-SRC_FILES	= main ClapTrap
+SRC_FILES	= main ClapTrap ScavTrap
 
 #OBJS
 ##OBJ = $(SRC:.cpp=.o)
