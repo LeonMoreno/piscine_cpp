@@ -10,12 +10,12 @@ class Fixed {
 		static int const	_fracBits;
 
 	public:
-		Fixed( void );
-		Fixed( Fixed & const src);
-		Fixed & operator=( Fixed & const src);
-		~Fixed( void );
+		Fixed( void ); // Default construct
+		Fixed( Fixed const &src); // Copy construct
+		Fixed & operator=( Fixed const &rhs); // Assignment construct operator overload
+		~Fixed( void ); // Destructor
 
-		int		getRawbits( void ) const;
+		int		getRawBits( void ) const;
 		void	setRawBits( int const raw);
 };
 

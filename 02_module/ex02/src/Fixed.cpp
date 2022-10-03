@@ -121,27 +121,27 @@ Fixed	Fixed::operator--(int) {
 
 /* special  functions min - Max */
 	Fixed &	Fixed::min(Fixed & p1, Fixed & p2) {
-		if (p1.getRawBits() < p2.getRawBits())
+		if (p1 < p2)
 			return(p1);
 		return(p2);
 	}
 
 	Fixed const &	Fixed::min(Fixed const & p1, Fixed const & p2) {
 		std::cout << "POR LA CONST\n";
-		if (p1.getRawBits() < p2.getRawBits())
+		if (p1 < p2)
 			return(p1);
 		return(p2);
 	}
 
 	Fixed &	Fixed::max(Fixed & p1, Fixed & p2) {
-		if (p1.getRawBits() > p2.getRawBits())
+		if (p1 > p2)
 			return(p1);
 		return(p2);
 	}
 
 	Fixed const &	Fixed::max(Fixed const & p1, Fixed const & p2) {
 		std::cout << "POR LA CONST\n";
-		if (p1.getRawBits() > p2.getRawBits())
+		if (p1 > p2)
 			return(p1);
 		return(p2);
 	}
