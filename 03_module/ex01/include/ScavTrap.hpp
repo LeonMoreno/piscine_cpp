@@ -11,6 +11,9 @@ class ScavTrap : public ClapTrap {
 		~ScavTrap(void);
 		ScavTrap & operator=(ScavTrap const & s);
 		ScavTrap( std::string name);
+
+		// Metodo propio
+		void	guardGate();
 };
 
 
