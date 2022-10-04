@@ -1,51 +1,31 @@
 #include "Point.hpp"
 
-// float	area(Point const a, Point const b, Point const c)
-// {
-// 	if (c.getX() == a.getX() && c.getY() == a.getY())
-// 		return false;
+/**
+ * @brief Calculo determinante o producto vectorial
+ * https://www.youtube.com/watch?v=kkucCUlyIUE
+ * https://www.geogebra.org/calculator/bhnvkzxf
+ * https://stackoverflow.com/questions/2049582/how-to-determine-if-a-point-is-in-a-2d-triangle
+ *
+ * @param v1
+ * @param v2
+ * @param p
+ * @return float determinate
+ */
 
-// 	return (abs(a.getX()*(b.getY() - c.getY()) + b.getX()*(c.getY() - a.getY()) + c.getX()*(a.getY() - b.getY())) / 2.0);
-// }
-
+float	det( Point const v1, Point const v2, Point const p)
+{
+	return ((v2.getX() - p.getX()) * (v1.getY() - p.getY()) - (v2.getY() - p.getY()) * (v1.getX() - p.getX()));
+}
 
 bool bsp( Point const a, Point const b, Point const c, Point const p)
 {
-	// float abc;
-	// float pab;
-	// float pbc;
-	// float pac;
-
-	// abc = area(a, b, c);
-	// pab = area(p, a, b);
-	// pbc = area(p, b, c);
-	// pac = area(p, a, c);
-
-	// // if ( abc == (pab + pbc + pac))
-	// // 	return (true);
-	// return (abc == (pab + pbc + pac)); // Directo sin IF
-
-
 	float	d1, d2, d3;
 	bool	has_neg, has_pos;
 
-	d1 = (c.getX() - p.getX()) * (a.getY() - p.getY()) - (c.getY() - p.getY()) * (a.getX() - p.getX());
-	d2 = (a.getX() - p.getX()) * (b.getY() - p.getY()) - (a.getY() - p.getY()) * (b.getX() - p.getX());
-	d3 = (b.getX() - p.getX()) * (c.getY() - p.getY()) - (b.getY() - p.getY()) * (c.getX() - p.getX());
-
-
-
-	// std::cout << "d1 = " << d1 << std::endl;
-	// std::cout << "d2 = " << d2 << std::endl;
-	// std::cout << "d3 = " << d3 << std::endl;
-
-	// if (d1 > 0 && d2 > 0 && d3 > 0)
-	// 	return true;
-
+	d1 = det(a, c, p);
+	d2 = det(b, a, p);
+	d3 = det(c, b, p);
 	has_neg = (d1 < 0) && (d2 < 0) && (d3 < 0);
     has_pos = (d1 > 0) && (d2 > 0) && (d3 > 0);
-
-	// return false;
-
     return (has_neg || has_pos);
 }
