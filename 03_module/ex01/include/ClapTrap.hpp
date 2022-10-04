@@ -28,11 +28,18 @@ class ClapTrap {
 		void	attack(ClapTrap & target);
 
 		// Getters & Setters
-		std::string	getName( void );
+		std::string	getName( void ) const;
 		void		setName( std::string name);
+
 		int			getHitP( void );
+		void		setHitP( int );
+
 		int			getAttackDamage( void );
+		void		setAttackDamage( int );
+
 		int			getEnergy( void );
+		void		setEnergy( int );
+
 		void		getInfo( void );
 
 };

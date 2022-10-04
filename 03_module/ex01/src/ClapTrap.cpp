@@ -3,20 +3,20 @@
 // Constructors and destructor
 
 ClapTrap::ClapTrap( void ) : _hitPoints(10), _energyPoints(10), _attackDamage(0) {
-	std::cout << "Clap Default Constructor" << std::endl;
+	std::cout << "Clap Default Constructor " << this << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string name ) :  _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
-	std::cout << "Clap INITialized Constructor" << std::endl;
+	std::cout << "Clap INITialized Constructor " << this << std::endl;
 }
 
 ClapTrap::ClapTrap( ClapTrap const & src ) :  _name(src._name), _hitPoints(src._hitPoints),\
 	_energyPoints(src._energyPoints), _attackDamage(src._attackDamage)  {
-	std::cout << "Clap Copy Constructor" << std::endl;
+	std::cout << "Clap Copy Constructor " << this << std::endl;
 }
 
 ClapTrap & ClapTrap::operator=( ClapTrap const & c) {
-	std::cout << "Clap Asgination Constructor" << std::endl;
+	std::cout << "Clap Asgination Constructor " << this << std::endl;
 	this->_name = c._name;
 	this->_hitPoints = c._hitPoints;
 	this->_energyPoints = c._energyPoints;
@@ -25,7 +25,7 @@ ClapTrap & ClapTrap::operator=( ClapTrap const & c) {
 }
 
 ClapTrap::~ClapTrap( void ) {
-	std::cout << "Clap Destructor" << std::endl;
+	std::cout << "Clap Destructor " << this << std::endl;
 }
 
 // public member functions -- Metodos (demande subject)
@@ -95,11 +95,11 @@ void	ClapTrap::attack(ClapTrap & target) {
 }
 
 // Getters & Setters
-std::string	ClapTrap::getName ( void ) {
+std::string	ClapTrap::getName ( void ) const{
 	return (this->_name);
 }
 
-void	ClapTrap::setName( std::string name ) {
+void	ClapTrap::setName( std::string name )  {
 	this->_name = name;
 }
 
@@ -107,12 +107,25 @@ int			ClapTrap::getAttackDamage( void ) {
 	return (this->_attackDamage);
 }
 
+void	ClapTrap::setAttackDamage( int n )  {
+	this->_attackDamage = n;
+}
+
+
 int			ClapTrap::getEnergy( void ) {
 	return (this->_energyPoints);
 }
 
+void	ClapTrap::setEnergy( int n )  {
+	this->_energyPoints = n;
+}
+
 int			ClapTrap::getHitP( void ) {
 	return (this->_hitPoints);
+}
+
+void	ClapTrap::setHitP( int n )  {
+	this->_hitPoints = n;
 }
 
 void	ClapTrap::getInfo( void ) {
