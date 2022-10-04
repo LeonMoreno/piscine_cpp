@@ -2,17 +2,17 @@
 
 int	main( void )
 {
-	// TEST POSITIVE
-	Point	a(0, 0);
-	Point	b(20, 0);
-	Point	c(10, 30);
-	Point	p0(10, 15);
-	Point	p1(0, 4);
-	Point p2 = Point(10, 10);
-	Point p3 = Point(5, 0);
-	Point p4 = Point(0, 0);
+	// // TEST POSITIVE
+	// Point	a(0, 0);
+	// Point	b(20, 0);
+	// Point	c(10, 30);
+	// Point	p0(10, 15);
+	// Point	p1(0, 4);
+	// Point p2 = Point(10, 10);
+	// Point p3 = Point(5, 0);
+	// Point p4 = Point(0, 0);
 
-	// TEST NEGATIVE
+	// // TEST NEGATIVE
 	// Point	a(0, 0);
 	// Point	b(-10.1f, 0.2f);
 	// Point	c(-5.3f, 19.8f);
@@ -21,6 +21,18 @@ int	main( void )
 	// Point p2 = Point(-5.2f, 5);
 	// Point p3 = Point(-4.2f, 0);
 	// Point p4 = Point(-8.1f, 5);
+
+	// TEST AP
+	Point	a(0, 0);
+	Point	b(0, 10);
+	Point	c(10, 0);
+	Point	p0(5, 5);
+	Point	p1(0, 4);
+	Point p2 = Point(-5.2f, 5);
+	Point p3 = Point(-4.2f, 0);
+	Point p4 = Point(-8.1f, 5);
+
+
 
 	std::cout << "================================" << std::endl;
 	std::cout << "P_0\n";
