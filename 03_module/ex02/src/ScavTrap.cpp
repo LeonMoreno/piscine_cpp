@@ -33,7 +33,6 @@ ScavTrap::ScavTrap( std::string name) : ClapTrap(name) {
 
 ScavTrap::~ScavTrap() {
 	std::cout << GRNB "ScavTrap Destructor " << this << RESET << std::endl;
-
 }
 
 //Metodo propio
@@ -69,5 +68,4 @@ void	ScavTrap::attack(ClapTrap & target) {
 		else if (target.getHitP() <= 0)
 			std::cout << target.getName() << " Is DIe" <<  std::endl;
 	}
-
 }

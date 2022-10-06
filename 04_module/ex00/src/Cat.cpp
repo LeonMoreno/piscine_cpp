@@ -2,11 +2,11 @@
 
 Cat::Cat( void ) {
 	this->type = "Cat";
-	std::cout << "Cat: Default Constructor" << std::endl;
+	std::cout << "Cat : Default Constructor" << std::endl;
 }
 
 Cat::~Cat( void ) {
-	std::cout << "Cat: Default Destructor" << std::endl;
+	std::cout << "Cat : Default Destructor" << std::endl;
 }
 
 void Cat::makeSound( void ) {

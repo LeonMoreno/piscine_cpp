@@ -2,12 +2,13 @@
 NAME		= Polymorphism
 SRC_DIR		= src/
 OBJ_DIR		= obj/
-CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic -I include/
+#CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic -I include/
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -I include/
 CC 			= c++
 RM 			= rm -fr
 
 #Souces FIles
-SRC_FILES	= main Animal Dog Cat
+SRC_FILES	= main Animal Dog Cat WrongAnimal WrongCat
 
 #OBJS
 ##OBJ = $(SRC:.cpp=.o)

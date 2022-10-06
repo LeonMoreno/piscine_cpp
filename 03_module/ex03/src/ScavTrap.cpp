@@ -33,12 +33,6 @@ ScavTrap::ScavTrap( std::string name) : ClapTrap(name) {
 
 ScavTrap::~ScavTrap() {
 	std::cout << GRNB "ScavTrap Destructor " << this << RESET << std::endl;
-
-}
-
-//Metodo propio
-void	ScavTrap::guardGate( ) {
-	std::cout << "ScavTrap " << this->getName() << "is now in Gate keeper mode." << std::endl;
 }
 
 // public member functions -- Metodos (out subject)
@@ -69,5 +63,9 @@ void	ScavTrap::attack(ClapTrap & target) {
 		else if (target.getHitP() <= 0)
 			std::cout << target.getName() << " Is DIe" <<  std::endl;
 	}
+}
 
+//Metodo propio
+void	ScavTrap::guardGate( ) {
+	std::cout << "ScavTrap " << this->getName() << "is now in Gate keeper mode." << std::endl;
 }

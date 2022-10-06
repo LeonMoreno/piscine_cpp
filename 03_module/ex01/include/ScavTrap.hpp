@@ -14,6 +14,7 @@ class ScavTrap : public ClapTrap {
 
 		// Metodo propio
 		void	guardGate();
+		void	attack(ClapTrap & target);
 };
 
 

@@ -3,7 +3,9 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : virtual public ClapTrap {
+// Virutal para evitar que se creen dos objetos base de ClapTrap se antepone Virtual
+// class ScavTrap :  public ClapTrap {
+class ScavTrap :  virtual public ClapTrap {
 
 	public:
 		ScavTrap( void );
