@@ -22,3 +22,7 @@ Animal & Animal::operator=(Animal const & a) {
 std::string Animal::getType( void ) {
 	return (this->type);
 }
+
+void	Animal::makeSound( void ){
+	std::cout << "Anical Anical Anical" << std::endl;
+}

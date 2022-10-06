@@ -7,7 +7,7 @@ CC 			= c++
 RM 			= rm -fr
 
 #Souces FIles
-SRC_FILES	= main Animal
+SRC_FILES	= main Animal Dog Cat
 
 #OBJS
 ##OBJ = $(SRC:.cpp=.o)

@@ -9,14 +9,14 @@ class Animal {
 	public:
 		Animal( void );
 		Animal( Animal const & src);
-		~Animal( void );
+		virtual ~Animal( void );
 		Animal & operator=(Animal const & a);
 
 		// Getters & Setters
 		std::string	getType( void );
 
 		// member functions
-		
+		virtual void	makeSound( void );
 };
 
 #endif
