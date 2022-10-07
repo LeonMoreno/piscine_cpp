@@ -2,7 +2,7 @@
 
 Cat::Cat( void ) {
 	this->type = "Cat";
-	std::cout << "Cat : Default Constructor" << std::endl;
+	std::cout << GRN "Cat :" RESET "Default Constructor" << this << std::endl;
 }
 
 Cat::~Cat( void ) {

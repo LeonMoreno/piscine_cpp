@@ -1,6 +1,5 @@
-HARD LINK
 #Variables
-NAME		= Polymorphism
+NAME		= Brain
 SRC_DIR		= src/
 OBJ_DIR		= obj/
 #CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic -I include/
@@ -9,7 +8,7 @@ CC 			= c++
 RM 			= rm -fr
 
 #Souces FIles
-SRC_FILES	= main Animal Dog Cat WrongAnimal WrongCat
+SRC_FILES	= main Animal Dog Cat WrongAnimal WrongCat Brain
 
 #OBJS
 ##OBJ = $(SRC:.cpp=.o)

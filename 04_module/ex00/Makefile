@@ -1,4 +1,3 @@
-HARD LINK
 #Variables
 NAME		= Polymorphism
 SRC_DIR		= src/

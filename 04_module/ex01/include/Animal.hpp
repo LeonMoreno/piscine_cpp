@@ -22,7 +22,7 @@ class Animal {
 		// member functions
 		// LLamada a la funcion dinamica.
 		// Metodo: Una funcion miembro virtual cuya resolucion sera dinamica.
-		virtual void	makeSound( void );
+		virtual void	makeSound( void ) = 0;
 };
 
 #endif

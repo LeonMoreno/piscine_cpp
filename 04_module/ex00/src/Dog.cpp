@@ -2,7 +2,7 @@
 
 Dog::Dog( void ) {
 	this->type = "Dog";
-	std::cout << "Dog : Default Constructor" << std::endl;
+	std::cout <<  YEL "Dog :" << RESET << "Default Constructor" << this << std::endl;
 }
 
 Dog::~Dog( void ) {

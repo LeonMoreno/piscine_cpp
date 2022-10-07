@@ -72,5 +72,7 @@ int	main( void )
 	delete a;
 	delete d;
 	delete c0;
+	delete w;
+	delete c1;
 	return (0);
 }

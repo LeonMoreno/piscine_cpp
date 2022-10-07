@@ -2,7 +2,7 @@
 
 Dog::Dog( void ) {
 	this->type = "Dog";
-	std::cout << "Dog : Default Constructor" << std::endl;
+	std::cout <<  YEL "Dog :" << RESET << "Default Constructor" << this << std::endl;
 }
 
 Dog::~Dog( void ) {
@@ -11,4 +11,8 @@ Dog::~Dog( void ) {
 
 void Dog::makeSound( void ) {
 	std::cout << "guAuuu guAuuu" << std::endl;
+}
+
+void	Dog::newBrain( void ) {
+	this->
 }

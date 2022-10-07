@@ -2,8 +2,11 @@
 # define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal {
+	private:
+		Brain	*bra;
 	public:
 		Dog( void );
 		Dog( Dog const & src);
@@ -12,6 +15,7 @@ class Dog : public Animal {
 
 		// Functions member
 		void	makeSound( void );
+		void	newBrain( void );
 };
 
 #endif

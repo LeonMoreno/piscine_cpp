@@ -1,8 +1,10 @@
 #include "WrongCat.hpp"
+#include "colours.hpp"
+
 
 WrongCat::WrongCat( void ) {
 	this->type = "WrongCat";
-	std::cout << "WrongCat : Default Constructor" << std::endl;
+	std::cout << CYN "WrongCat :" << RESET <<  "Default Constructor"  << this << std::endl;
 }
 
 WrongCat::~WrongCat( void ) {

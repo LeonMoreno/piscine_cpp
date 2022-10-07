@@ -1,7 +1,8 @@
 #include "WrongAnimal.hpp"
+#include "colours.hpp"
 
 WrongAnimal::WrongAnimal( void ) : type("WrongAnimal") {
-	std::cout << "WrongAnimal : Default Constructor" << std::endl;
+	std::cout << CYN "WrongAnimal :" << RESET << "Default Constructor" << this << std::endl;
 }
 
 WrongAnimal::WrongAnimal( WrongAnimal const & src ) {
