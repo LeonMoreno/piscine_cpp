@@ -4,21 +4,21 @@
 #include <iostream>
 #include "colours.hpp"
 
-class Animal {
+class AAnimal {
 	protected:
 		std::string	_type;
 	public:
-		Animal( void );
-		Animal( Animal const & src );
-		virtual ~Animal( void );
-		Animal & operator=(Animal const & a );
+		AAnimal( void );
+		AAnimal( AAnimal const & src );
+		virtual ~AAnimal( void );
+		AAnimal & operator=(AAnimal const & a );
 
 		//Getters & Setters
 		std::string	getType( void );
 		void		setType( std::string type );
 
 		// Functions members - en este caso metodo
-		virtual void	makeSound( void );
+		virtual void	makeSound( void ) = 0;
 };
 
 #endif

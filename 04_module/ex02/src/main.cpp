@@ -6,7 +6,7 @@
 
 
 
-void	ftSound( Animal *ptr)
+void	ftSound( AAnimal *ptr)
 {
 	std::cout << ptr->getType() << ": " ;
 	ptr->makeSound();
@@ -22,9 +22,11 @@ int	main( void )
 {
 	std::cout << "\n\t ============================== " << std::endl;
 	std::cout << RED "\t\t Constructor " RESET << std::endl;
-	Animal	*d[100];
+	// AAnimal l; // No se puede instanciar por q es una clase Abstracta
 
-	for (int i = 0; i < 100; i++) {
+	Dog	*d[50];
+
+	for (int i = 0; i < 50; i++) {
 		if (i % 2 == 0)
 		{
 			d[i] = new Dog();
@@ -32,7 +34,7 @@ int	main( void )
 		}
 		else
 		{
-			d[i] = new Cat();
+			d[i] = new Dog();
 			((Cat *) d[i])->Cat::setIdea();
 		}
 
@@ -40,9 +42,8 @@ int	main( void )
 
 	std::cout << "\t ============================== " << std::endl;
 	std::cout << RED " \t\tDESTRUCTORS " RESET << std::endl;
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < 50; i++)
 		delete d[i];
-
 
 	return (0);
 }

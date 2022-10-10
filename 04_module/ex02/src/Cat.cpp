@@ -6,7 +6,7 @@ Cat::Cat ( void ) {
 	this->_brain = new Brain();
 }
 
-Cat::Cat ( Cat const & src ) : Animal(src) {
+Cat::Cat ( Cat const & src ) : AAnimal(src) {
 	std::cout << "Cat: Copy Constructor " << this << std::endl;
 	// this->_type = src._type;
 }
