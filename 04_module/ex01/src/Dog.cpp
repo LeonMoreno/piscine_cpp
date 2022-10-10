@@ -1,18 +1,25 @@
-#include "Dog.hpp"
+#include <Dog.hpp>
 
-Dog::Dog( void ) {
-	this->type = "Dog";
-	std::cout <<  YEL "Dog :" << RESET << "Default Constructor" << this << std::endl;
+Dog::Dog ( void ) {
+	this->_type = "Dog";
+	std::cout << "Dog: Defult Constructor " << this << std::endl;
+}
+
+Dog::Dog ( Dog const & src ) : Animal(src) {
+	std::cout << "Dog: Copy Constructor " << this << std::endl;
+	// this->_type = src._type;
 }
 
 Dog::~Dog( void ) {
-	std::cout << "Dog : Default Destructor" << std::endl;
+	std::cout << "Dog: Destructor " << this << std::endl;
 }
 
-void Dog::makeSound( void ) {
-	std::cout << "guAuuu guAuuu" << std::endl;
+Dog & Dog::operator=( Dog const & a ) {
+	std::cout << "Dog: Assignation Constructor " << this << std::endl;
+	this->_type = a._type;
+	return (*this);
 }
 
-void	Dog::newBrain( void ) {
-	this->
+void	Dog::makeSound( void ) {
+	std::cout << "Dog: Gua Gua Guaaauuuuuu Gua Gua" << std::endl;
 }

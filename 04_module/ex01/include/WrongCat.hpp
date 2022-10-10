@@ -1,17 +1,21 @@
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#ifndef WRONGWrongCAT_HPP_
+#define WRONGWrongCAT_HPP_
 
+#include <iostream>
 #include "WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal {
 	public:
 		WrongCat( void );
-		WrongCat( WrongCat const & src);
+		WrongCat( WrongCat const & src );
 		~WrongCat( void );
-		WrongCat & operator=( WrongCat const & d);
+		WrongCat & operator=(WrongCat const & a );
 
-		// Functions member
+		//Getters & Setters
+
+		// Functions members - en este caso metodo
 		void	makeSound( void );
+
 };
 
 #endif

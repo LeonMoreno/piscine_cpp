@@ -1,21 +1,22 @@
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef DOG_HPP_
+#define DOG_HPP_
 
+#include <iostream>
 #include "Animal.hpp"
-#include "Brain.hpp"
 
 class Dog : public Animal {
-	private:
-		Brain	*bra;
 	public:
 		Dog( void );
-		Dog( Dog const & src);
+		Dog( Dog const & src );
 		~Dog( void );
-		Dog & operator=( Dog const & d);
+		Dog & operator=(Dog const & a );
 
-		// Functions member
+		//Getters & Setters
+
+
+		// Functions members - en este caso metodo
 		void	makeSound( void );
-		void	newBrain( void );
+
 };
 
 #endif

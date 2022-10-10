@@ -1,28 +1,24 @@
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef ANIMAL_HPP_
+#define ANIMAL_HPP_
 
 #include <iostream>
-#include <colours.hpp>
+#include "colours.hpp"
 
 class Animal {
 	protected:
-		std::string	type;
+		std::string	_type;
 	public:
 		Animal( void );
-		Animal( Animal const & src);
-		Animal & operator=(Animal const & a);
-
-		// EL destructor debe ser virtual cuando hay funciones polimorficas en nuestra clase
-		// funciones con la palabra clave: virtual
+		Animal( Animal const & src );
 		virtual ~Animal( void );
+		Animal & operator=(Animal const & a );
 
-		// Getters & Setters
-		std::string getType( void );
+		//Getters & Setters
+		std::string	getType( void );
+		void		setType( std::string type );
 
-		// member functions
-		// LLamada a la funcion dinamica.
-		// Metodo: Una funcion miembro virtual cuya resolucion sera dinamica.
-		virtual void	makeSound( void ) = 0;
+		// Functions members - en este caso metodo
+		virtual void	makeSound( void );
 };
 
 #endif

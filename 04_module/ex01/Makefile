@@ -8,7 +8,7 @@ CC 			= c++
 RM 			= rm -fr
 
 #Souces FIles
-SRC_FILES	= main Animal Dog Cat WrongAnimal WrongCat Brain
+SRC_FILES	= main Animal Dog Cat WrongAnimal WrongCat
 
 #OBJS
 ##OBJ = $(SRC:.cpp=.o)

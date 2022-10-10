@@ -1,21 +1,22 @@
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef WRONGANIMAL_HPP_
+#define WRONGANIMAL_HPP_
 
 #include <iostream>
 
 class WrongAnimal {
 	protected:
-		std::string	type;
+		std::string	_type;
 	public:
 		WrongAnimal( void );
-		WrongAnimal( WrongAnimal const & src);
-		~WrongAnimal( void );
-		WrongAnimal & operator=(WrongAnimal const & a);
+		WrongAnimal( WrongAnimal const & src );
+		virtual ~WrongAnimal( void );
+		WrongAnimal & operator=(WrongAnimal const & a );
 
-		// Getters & Setters
+		//Getters & Setters
 		std::string	getType( void );
+		void		setType( std::string type );
 
-		// member functions
+		// Functions members - en este caso metodo
 		void	makeSound( void );
 };
 
