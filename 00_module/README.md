@@ -30,7 +30,7 @@
 ### UML Diagram
 
 **1. MegaPhone**
-
+<img alt="UML" src="/00_module/ex00/00_mod_ex01.jpeg" />
 
 
 **2. Using it in your code**
