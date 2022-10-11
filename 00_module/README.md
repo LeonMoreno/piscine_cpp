@@ -33,21 +33,3 @@
 <img alt="UML" src="00_mod_ex01.jpeg" />
 
 
-**2. Using it in your code**
-
-To use the library functions in your code, simply include its header:
-
-```C
-#include "libft.h"
-```
-
-`gcc [main] libft.a && ./a.out` | Compile a main with the library, and then execute the program.
-
-
-## 📋 Third-party testers
-
-You can use any of this third party testers to test the project
-
-* [Tripouille/libfTester](https://github.com/Tripouille/libftTester)
-* [ska42/libft-war-machine](https://github.com/ska42/libft-war-machine)
-* [alelievr/libft-unit-test](https://github.com/alelievr/libft-unit-test)
