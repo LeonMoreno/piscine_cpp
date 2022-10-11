@@ -33,10 +33,9 @@
 
 ## List of Exercises:
 
-* [`exercise 00`](/ex00)		- Megaphone.
+* [`exercise 00`](/00_module/ex00)		- Megaphone.
 * [`exercise 01`](/ex01)        - My Awesome PhoneBook.
 * [`exercise 02`](/ex02)        - The Job Of Your Dreams.
-
 
 ## 🛠️ Usage
 
