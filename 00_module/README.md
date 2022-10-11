@@ -33,29 +33,15 @@
 
 ## List of Exercises:
 
-* [`exercise 00`](/ex00)		- Megaphone.
+* [`exercise 00`](/00_module/ex00)		- Megaphone.
 * [`exercise 01`](/ex01)        - My Awesome PhoneBook.
 * [`exercise 02`](/ex02)        - The Job Of Your Dreams.
 
 
-## 🛠️ Usage
+### UML Diagram
 
-### Requirements
+**1. MegaPhone**
 
-The library is written in C language and needs the **`gcc` compiler** and some standard **C libraries** to run.
-
-### Instructions
-
-**1. Compiling the library**
-
- Commande       	|  Actions 	|
-|----------------	|----------	|
-| `make`      	  | Compile les .c et créer libft.a  	|
-| `make clean`    | Supprime les .o.  	|
-| `make flcean`  	| Supprime les .o et libft.a.  	|
-| `make re`     	| Exécute fclean et make.  	|
-| `make bonus`          | For bonus functions.        |
-| `make norm`          | Verification with the norminettes. |
 
 
 **2. Using it in your code**
