@@ -8,7 +8,7 @@ CC 			= c++
 RM 			= rm -fr
 
 #Souces FIles
-SRC_FILES	= main AMateria Ice
+SRC_FILES	= main AMateria Ice Cure MateriaSource
 
 #OBJS
 ##OBJ = $(SRC:.cpp=.o)

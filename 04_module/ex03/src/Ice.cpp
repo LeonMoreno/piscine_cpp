@@ -20,10 +20,12 @@ Ice::~Ice(void) {
 	std::cout << "Ice DesTRUCTOR " << this << std::endl;
 }
 
-std::string const & AMateria::getType() const {
-	return(this->type);
-}
-
-// Ice* Ice::clone() const {
-// 	return (this);
+// std::string const & AMateria::getType() const {
+// 	return(this->type);
 // }
+
+Ice* Ice::clone() const {
+	Ice *tmp = new Ice(*this);
+	return (tmp);
+	// return ((Ice *)this);
+}

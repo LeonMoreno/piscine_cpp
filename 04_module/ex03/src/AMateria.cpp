@@ -7,7 +7,7 @@ AMateria::AMateria(void) {
 AMateria::AMateria(AMateria const & src) : type(src.type) {
 	std::cout << "AMateria copy Constructor " << this << std::endl;
 }
-
+// While assigning a Materia to another, copying the type doesn’t make sense.
 AMateria & AMateria::operator=(AMateria const & a) {
 	std::cout << "AMateria asignation Constructor " << this << std::endl;
 	this->type = a.getType();
@@ -22,6 +22,7 @@ std::string const & AMateria::getType() const {
 	return(this->type);
 }
 
-AMateria* AMateria::clone() const {
-	return (&this);
-}
+// Un metodo puro no la puedo implementar
+// AMateria* AMateria::clone() const {
+// 	return (&this);
+// }
