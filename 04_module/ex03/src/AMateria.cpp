@@ -22,6 +22,11 @@ std::string const & AMateria::getType() const {
 	return(this->type);
 }
 
+void	AMateria::use(ICharacter& target) {
+	std::cout << "NADA ES AMateria " << target.getName() << std::endl;
+}
+
+
 // Un metodo puro no la puedo implementar
 // AMateria* AMateria::clone() const {
 // 	return (&this);

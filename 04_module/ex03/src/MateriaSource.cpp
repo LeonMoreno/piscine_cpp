@@ -8,14 +8,19 @@ MateriaSource::MateriaSource(void) {
 
 MateriaSource::~MateriaSource(void) {
 	std::cout << "MateriaSource DEStructor " << this << std::endl;
+	for (int i = 0; i < 4; i++)
+		{
+			if (this->mater[i] != NULL)
+				delete mater[i];
+		}
 }
 
 void	MateriaSource::learnMateria(AMateria *src) {
-	std::cout << "Miremos " << src << std::endl;
 	for (int i = 0; i < 4; i++) {
 		if (this->mater[i] == NULL)
 		{
 			this->mater[i] = src;
+			std::cout << "Miremos " << src << std::endl;
 			break;
 		}
 
