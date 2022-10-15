@@ -20,10 +20,13 @@ class Character : public ICharacter {
 		// Getters and Setters
 		std::string const & getName() const;
 
-		// Metodos
+		// Funcion miembros y Metodos
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
+
+		// Funcion miembros
+		bool	checkAMateria(AMateria *m);
 
 };
 

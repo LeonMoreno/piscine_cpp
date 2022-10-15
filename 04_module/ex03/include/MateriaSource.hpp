@@ -2,6 +2,8 @@
 # define MATERIASOURCE_HPP_
 
 #include "IMateriaSource.hpp"
+#define MAX_INVENTORY 4
+
 
 class MateriaSource : public IMateriaSource {
 	public:
@@ -9,7 +11,7 @@ class MateriaSource : public IMateriaSource {
 		MateriaSource(MateriaSource const & src);
 		~MateriaSource(void);
 		MateriaSource & operator=(MateriaSource const & m);
-		AMateria *mater[4];
+		AMateria *mater[MAX_INVENTORY];
 
 		//Metodos
 		void learnMateria(AMateria*);

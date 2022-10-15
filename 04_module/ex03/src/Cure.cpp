@@ -5,10 +5,10 @@ Cure::Cure(void) : AMateria() {
 	this->type = "cure";
 }
 
-// Cure::Cure(Cure const & src) {
-// 	std::cout << "Cure copy Constructor " << this << std::endl;
-// 	this->type = src.getType();
-// }
+Cure::Cure(Cure const & src) : AMateria(src) {
+	std::cout << "Cure copy Constructor " << this << std::endl;
+	//this->type = src.getType();
+}
 
 Cure & Cure::operator=(Cure const & a) {
 	std::cout << "Cure asignation Constructor " << this << std::endl;
@@ -27,5 +27,9 @@ Cure::~Cure(void) {
 Cure* Cure::clone() const {
 	Cure *tmp = new Cure(*this);
 	return (tmp);
-	// return ((Cure *)this);
+}
+
+void	Cure::use(ICharacter &type) {
+	std::cout << "* heals " << type.getName();
+	std::cout << "’s wounds *" << std::endl;
 }

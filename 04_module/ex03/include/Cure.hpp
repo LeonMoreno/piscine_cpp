@@ -7,12 +7,12 @@
 class Cure : public AMateria {
 	public:
 		Cure(void);
-		// Cure(Cure const & src);
+		Cure(Cure const & src);
 		~Cure(void);
 		Cure & operator=(Cure const & a);
 
 		Cure* clone() const;
-		// void use(ICharacter& target);
+		void use(ICharacter& target);
 
 };
 
