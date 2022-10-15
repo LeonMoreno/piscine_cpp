@@ -14,9 +14,11 @@ class AMateria {
 		virtual ~AMateria(void);
 		AMateria & operator=(AMateria const & a);
 
+		// Getters & Setters
 		std::string	const & getType() const;
-		virtual AMateria* clone() const = 0;
 
+		// Funcion membre - Methods
+		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
 };
 

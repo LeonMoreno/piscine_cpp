@@ -1,5 +1,7 @@
 #include "AMateria.hpp"
 
+//****** Constructors and Destructors*****//
+
 AMateria::AMateria(void) {
 	std::cout << "AMateria Default Constructor " << this << std::endl;
 }
@@ -18,16 +20,19 @@ AMateria::~AMateria(void) {
 	std::cout << "AMateria DesTRUCTOR " << this << std::endl;
 }
 
+//****** Getters and Setters*****//
+
 std::string const & AMateria::getType() const {
 	return(this->type);
 }
+
+//****** Funcion membre - Methods *****//
 
 void	AMateria::use(ICharacter& target) {
 	std::cout << "NADA ES AMateria " << target.getName() << std::endl;
 }
 
-
-// Un metodo puro no la puedo implementar
+// Un metodo puro no se puede implementar en la clase base
 // AMateria* AMateria::clone() const {
 // 	return (&this);
 // }

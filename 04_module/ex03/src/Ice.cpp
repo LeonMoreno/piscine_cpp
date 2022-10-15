@@ -5,10 +5,10 @@ Ice::Ice(void) : AMateria() {
 	this->type = "ice";
 }
 
-Ice::Ice(Ice const & src) {
-	std::cout << "Ice copy Constructor " << this << std::endl;
-	this->type = src.getType();
-}
+// Ice::Ice(Ice const & src) {
+// 	std::cout << "Ice copy Constructor " << this << std::endl;
+// 	this->type = src.getType();
+// }
 
 Ice & Ice::operator=(Ice const & a) {
 	std::cout << "Ice asignation Constructor " << this << std::endl;

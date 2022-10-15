@@ -1,9 +1,14 @@
+// concepto de nullptr
+// https://stackoverflow.com/questions/1282295/what-exactly-is-nullptr
+
 #include "Character.hpp"
 #include "AMateria.hpp"
 
-Character::Character(void) : _name("nameless") {
+Character::Character(void) :
+	_name("nameless"),
+	_nbTotal (0) {
 	std::cout << "Character Default Constructor " << this << std::endl;
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < MAX_INVENTORY; i++)
 		this->_slot[i] = NULL;
 }
 
@@ -16,10 +21,12 @@ Character::~Character(void) {
 	// }
 }
 
-Character::Character(std::string name) : _name(name) {
+Character::Character(std::string name) :
+	_name(name),
+	_nbTotal(0) {
 	std::cout << "Character INIT Constructor " << this << std::endl;
 	for (int i = 0; i < 4; i++)
-		this->_slot[i] = NULL;
+		this->_slot[i] = nullptr;
 }
 
 std::string const &	Character::getName() const {
