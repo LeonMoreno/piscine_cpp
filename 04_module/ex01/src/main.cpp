@@ -4,8 +4,6 @@
 #include "WrongCat.hpp"
 #include "WrongAnimal.hpp"
 
-
-
 void	ftSound( Animal *ptr)
 {
 	std::cout << ptr->getType() << ": " ;
@@ -42,7 +40,5 @@ int	main( void )
 	std::cout << RED " \t\tDESTRUCTORS " RESET << std::endl;
 	for (int i = 0; i < 100; i++)
 		delete d[i];
-
-
 	return (0);
 }
