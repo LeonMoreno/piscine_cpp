@@ -20,9 +20,6 @@ int	main(void)
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	ICharacter* bob = new Character("bob");
-	me->use(0, *bob);
-	me->use(1, *bob);
-
 
 
 
@@ -32,8 +29,6 @@ int	main(void)
 
 	// ICharacter *me = new Character("me");
 
-	// std::cout << "\n\t ============================== " << std::endl;
-	// std::cout << RED " \t\tENSAYOSSS " RESET << std::endl;
 
 	// AMateria *tmp;
 
@@ -42,6 +37,14 @@ int	main(void)
 	// tmp = src->createMateria("cure");
 	// me->equip(tmp); //1
 	// tmp = src->createMateria("cure");
+
+	std::cout << "\n\t ============================== " << std::endl;
+	std::cout << RED "\t\t TEST " RESET << std::endl;
+
+	me->use(0, *bob);
+	me->use(1, *bob);
+
+
 	// me->equip(tmp); //2
 
 	// me->equip(tmp); //3

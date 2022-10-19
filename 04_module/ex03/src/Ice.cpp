@@ -5,10 +5,10 @@ Ice::Ice(void) : AMateria() {
 	this->type = "ice";
 }
 
-// Ice::Ice(Ice const & src) {
-// 	std::cout << "Ice copy Constructor " << this << std::endl;
-// 	this->type = src.getType();
-// }
+Ice::Ice(Ice const & src) : AMateria(src){
+	// this->_tmp = src._tmp;
+	std::cout << "Ice copy Constructor " << this << std::endl;
+}
 
 Ice & Ice::operator=(Ice const & a) {
 	std::cout << "Ice asignation Constructor " << this << std::endl;
@@ -33,3 +33,4 @@ Ice* Ice::clone() const {
 void	Ice::use(ICharacter& target) {
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
+
