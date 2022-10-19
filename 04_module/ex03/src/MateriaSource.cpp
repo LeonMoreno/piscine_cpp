@@ -35,6 +35,7 @@ AMateria*	MateriaSource::createMateria(std::string const & type) {
 			std::string tsrc = this->mater[i]->getType();
 			if (tsrc == type)
 			{
+				std::cout << "AMa type: " << this->mater[i]->getType() << std::endl;
 				return (this->mater[i]->clone());
 			}
 		}

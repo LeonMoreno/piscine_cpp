@@ -74,7 +74,7 @@ void	Character::unequip(int idx) {
 }
 
 void	Character::use(int idx, ICharacter& target) {
-	if (idx >= MAX_INVENTORY)
+	if (idx >= MAX_INVENTORY || this->_slot[idx] == NULL)
 		std::cout << "Sorry slot don't exist" << std::endl;
 	else
 		this->_slot[idx]->use(target);
@@ -89,8 +89,6 @@ bool	Character::checkAMateria(AMateria *m)
 			std::cout << " * " << m << " *";
 			std::cout << " is already in slot ";
 			std::cout << i << std::endl;
-
-
 			return (true);
 		}
 	}

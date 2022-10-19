@@ -4,45 +4,39 @@
 #include "colours.hpp"
 #include "MateriaSource.hpp"
 #include "Character.hpp"
+#include "Water.hpp"
 
 int	main(void)
 {
 	std::cout << "\n\t ============================== " << std::endl;
 	std::cout << RED "\t\t constructors " RESET << std::endl;
 
-	IMateriaSource* src = new MateriaSource();
+	IMateriaSource *src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
-	ICharacter* me = new Character("me");
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
+	src->learnMateria(new Water());
+
+	ICharacter *me = new Character("me");
+
+
+	AMateria *tmp;
+
+	//tmp = src->createMateria("ice");
+	me->equip(src->createMateria("ice")); //0
 	tmp = src->createMateria("cure");
-	me->equip(tmp);
+	me->equip(tmp); //1
+	// tmp = src->createMateria("cure");
+	// tmp = src->createMateria("water");
+	// me->equip(tmp);  // slot 2
+
 	ICharacter* bob = new Character("bob");
-
-
-
-	// IMateriaSource *src = new MateriaSource();
-	// src->learnMateria(new Ice());
-	// src->learnMateria(new Cure());
-
-	// ICharacter *me = new Character("me");
-
-
-	// AMateria *tmp;
-
-	// //tmp = src->createMateria("ice");
-	// me->equip(src->createMateria("ice")); //0
-	// tmp = src->createMateria("cure");
-	// me->equip(tmp); //1
-	// tmp = src->createMateria("cure");
 
 	std::cout << "\n\t ============================== " << std::endl;
 	std::cout << RED "\t\t TEST " RESET << std::endl;
 
 	me->use(0, *bob);
 	me->use(1, *bob);
+	// me->use(2, *bob);
 
 
 	// me->equip(tmp); //2
@@ -63,10 +57,6 @@ int	main(void)
 
 	std::cout << "\n\t ============================== " << std::endl;
 	std::cout << RED " \t\tDESTRUCTORS " RESET << std::endl;
-
-	// delete src;
-	// delete me;
-
 
 	delete bob;
 	delete me;
