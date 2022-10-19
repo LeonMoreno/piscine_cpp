@@ -16,19 +16,21 @@ public:
 	Bureaucrat(std::string name, int grade);
 	~Bureaucrat(void);
 
+	/* Setters and Getters */
+	std::string	getName();
+	int			getGrade();
+
 	/* Member functions */
+	void	incrementGrade(int n);
+	void	decrementGrade(int n);
 	//void	GradeTooLowException(void);
 	class	GradeTooHighException : public std::exception {
 		public:
-			virtual const char* what() const throw() {
-				return ("Grade Too High Exception");
-			}
+			virtual const char* what() const throw();
 	};
 	class	GradeTooLowException : public std::exception {
 		public:
-			virtual const char* what() const throw() {
-				return ("Grade Too Low Exception");
-			}
+			virtual const char* what() const throw();
 	};
 };
 

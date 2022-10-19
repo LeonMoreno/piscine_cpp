@@ -8,7 +8,7 @@ CC 			= c++
 RM 			= rm -fr
 
 #Souces FIles
-SRC_FILES	= main Bureaucrat
+SRC_FILES	= main Bureaucrat Myexceptions
 
 #OBJS
 ##OBJ = $(SRC:.cpp=.o)

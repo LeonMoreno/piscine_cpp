@@ -42,6 +42,14 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
 /* 		Setters and Getters		*/
 /********************************/
 
+std::string Bureaucrat::getName() {
+	return (this->_name);
+}
+
+int	Bureaucrat::getGrade() {
+	return (this->_grade);
+}
+
 /********************************/
 /*		Members functions		*/
 /********************************/
@@ -54,3 +62,28 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
 // 	std::cout << "Grade Too High Exception" << std::endl;
 // }
 
+void	Bureaucrat::incrementGrade(int n) {
+	try{
+		if ((this->getGrade() - n) < 0)
+			throw Bureaucrat::GradeTooLowException();
+		else
+			this->_grade = this->getGrade() - n;
+	}
+	catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+
+}
+
+void	Bureaucrat::decrementGrade(int n) {
+	try {
+		if ((this->getGrade() + n) > 150)
+			throw Bureaucrat::GradeTooHighException();
+		else
+			this->_grade = this->_grade + n;
+	}
+	catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+
+}
