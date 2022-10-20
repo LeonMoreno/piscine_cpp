@@ -1,5 +1,5 @@
-#ifndef ANIMAL_HPP_
-#define ANIMAL_HPP_
+#ifndef AANIMAL_HPP_
+#define AANIMAL_HPP_
 
 #include <iostream>
 #include "colours.hpp"
@@ -14,11 +14,11 @@ class AAnimal {
 		AAnimal & operator=(AAnimal const & a );
 
 		//Getters & Setters
-		std::string	getType( void );
+		std::string	getType( void ) const;
 		void		setType( std::string type );
 
 		// Functions members - en este caso metodo
-		virtual void	makeSound( void ) = 0;
+		virtual void	makeSound( void ) const = 0;
 };
 
 #endif

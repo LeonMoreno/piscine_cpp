@@ -19,10 +19,10 @@ AAnimal & AAnimal::operator=( AAnimal const & a ) {
 	return (*this);
 }
 
-std::string AAnimal::getType( void ) {
+std::string AAnimal::getType( void ) const {
 	return (this->_type);
 }
 
-void	AAnimal::makeSound( void ) {
+void	AAnimal::makeSound( void ) const {
 	std::cout << "AAnimal: AnicMAL AnicMAL AnicMAL" << std::endl;
 }

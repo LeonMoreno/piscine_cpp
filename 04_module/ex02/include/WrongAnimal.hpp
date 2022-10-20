@@ -13,11 +13,11 @@ class WrongAnimal {
 		WrongAnimal & operator=(WrongAnimal const & a );
 
 		//Getters & Setters
-		std::string	getType( void );
+		std::string	getType( void ) const;
 		void		setType( std::string type );
 
 		// Functions members - en este caso metodo
-		void	makeSound( void );
+		void	makeSound( void ) const;
 };
 
 #endif

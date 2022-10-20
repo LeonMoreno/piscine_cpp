@@ -14,11 +14,11 @@ class Animal {
 		Animal & operator=(Animal const & a );
 
 		//Getters & Setters
-		std::string	getType( void );
+		std::string	getType( void ) const;
 		void		setType( std::string type );
 
 		// Functions members - en este caso metodo
-		virtual void	makeSound( void );
+		virtual void	makeSound( void ) const;
 };
 
 #endif

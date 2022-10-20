@@ -15,10 +15,11 @@ class Dog : public AAnimal {
 		Dog & operator=(Dog const & a );
 
 		//Getters & Setters
+		void	getBrain();
 
 
 		// Functions members - en este caso metodo
-		void	makeSound( void );
+		void	makeSound( void ) const;
 		void	setIdea(void);
 
 };

@@ -17,7 +17,7 @@ class Cat : public Animal {
 		//Getters & Setters
 
 		// Functions members - en este caso metodo
-		void	makeSound( void );
+		void	makeSound( void ) const;
 		void	setIdea(void);
 		void	getBrain(void);
 
