@@ -21,9 +21,10 @@ public:
 	int			getGrade();
 
 	/* Member functions */
-	void	incrementGrade(int n);
-	void	decrementGrade(int n);
+	void	upGrade(int n);
+	void	downGrade(int n);
 	//void	GradeTooLowException(void);
+	/* nested classes */
 	class	GradeTooHighException : public std::exception {
 		public:
 			virtual const char* what() const throw();

@@ -11,7 +11,7 @@ class Cat : public Animal {
 		Cat & operator=( Cat const & d);
 
 		// Functions member
-		void	makeSound( void );
+		void	makeSound( void ) const ;
 };
 
 #endif

@@ -19,6 +19,7 @@ class Cat : public Animal {
 		// Functions members - en este caso metodo
 		void	makeSound( void );
 		void	setIdea(void);
+		void	getBrain(void);
 
 };
 

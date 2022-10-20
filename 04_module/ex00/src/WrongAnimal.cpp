@@ -20,10 +20,10 @@ WrongAnimal & WrongAnimal::operator=(WrongAnimal const & a) {
 	return (*this);
 }
 
-std::string WrongAnimal::getType( void ) {
+std::string WrongAnimal::getType( void ) const{
 	return (this->type);
 }
 
-void	WrongAnimal::makeSound( void ){
+void	WrongAnimal::makeSound( void ) const{
 	std::cout << "W_Anical W_Anical W_Anical" << std::endl;
 }

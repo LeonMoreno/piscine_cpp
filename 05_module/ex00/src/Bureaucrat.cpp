@@ -62,7 +62,7 @@ int	Bureaucrat::getGrade() {
 // 	std::cout << "Grade Too High Exception" << std::endl;
 // }
 
-void	Bureaucrat::incrementGrade(int n) {
+void	Bureaucrat::upGrade(int n) {
 	try{
 		if ((this->getGrade() - n) < 0)
 			throw Bureaucrat::GradeTooLowException();
@@ -75,7 +75,7 @@ void	Bureaucrat::incrementGrade(int n) {
 
 }
 
-void	Bureaucrat::decrementGrade(int n) {
+void	Bureaucrat::downGrade(int n) {
 	try {
 		if ((this->getGrade() + n) > 150)
 			throw Bureaucrat::GradeTooHighException();

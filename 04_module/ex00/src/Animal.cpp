@@ -19,10 +19,10 @@ Animal & Animal::operator=(Animal const & a) {
 	return (*this);
 }
 
-std::string Animal::getType( void ) {
+std::string Animal::getType( void ) const{
 	return (this->type);
 }
 
-void	Animal::makeSound( void ){
+void	Animal::makeSound( void ) const {
 	std::cout << "Anical Anical Anical " << this << std::endl;
 }

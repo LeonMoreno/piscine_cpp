@@ -29,3 +29,7 @@ void	Cat::makeSound( void ) {
 void	Cat::setIdea(void) {
 	std::cout << this->_brain->getIdeas() << std::endl;
 }
+
+void	Cat::getBrain(void) {
+	std::cout << "Brain=" << this->_brain << std::endl;
+}

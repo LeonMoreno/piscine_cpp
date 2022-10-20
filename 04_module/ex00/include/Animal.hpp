@@ -17,12 +17,12 @@ class Animal {
 		virtual ~Animal( void );
 
 		// Getters & Setters
-		std::string getType( void );
+		std::string getType( void ) const;
 
 		// member functions
 		// LLamada a la funcion dinamica.
 		// Metodo: Una funcion miembro virtual cuya resolucion sera dinamica.
-		virtual void	makeSound( void );
+		virtual void	makeSound( void ) const;
 };
 
 #endif

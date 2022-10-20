@@ -10,13 +10,13 @@
 #include "WrongAnimal.hpp"
 
 
-void	ftSound( Animal *ptr)
+void	ftSound( const Animal *ptr)
 {
 	std::cout << ptr->getType() << ": " ;
 	ptr->makeSound();
 }
 
-void	ftSoundW( WrongAnimal *ptr)
+void	ftSoundW( const WrongAnimal *ptr)
 {
 	std::cout << ptr->getType() << ": " ;
 	ptr->makeSound();
@@ -26,17 +26,17 @@ int	main( void )
 {
 	std::cout << "\n\t ============================== " << std::endl;
 	std::cout << RED "\t\t Constructor " RESET << std::endl;
-	Animal		*a = new Animal();
-	Animal		*d = new Dog();
-	Animal		*c0 = new Cat();
-	WrongAnimal	*w = new WrongAnimal();
-	WrongCat	*c1 = new WrongCat();
+	const Animal		*a = new Animal();
+	const Animal		*d = new Dog();
+	const Animal		*c0 = new Cat();
+	const WrongAnimal	*w = new WrongAnimal();
+	const WrongCat	*c1 = new WrongCat();
 
 	std::cout << "\n\t ============================== " << std::endl;
 	std::cout << RED " \t\tTest subject " RESET << std::endl;
-	std::cout << "Dog = " << a->getType() << std::endl;
+	std::cout << "Anm = " << a->getType() << std::endl;
 	std::cout << "Anm = " << d->getType() << std::endl;
-	std::cout << "cat = " << c0->getType() << std::endl;
+	std::cout << "Anm = " << c0->getType() << std::endl;
 
 	a->makeSound();
 	d->makeSound();

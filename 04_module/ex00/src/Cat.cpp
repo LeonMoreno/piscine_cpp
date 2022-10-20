@@ -20,6 +20,6 @@ Cat::~Cat( void ) {
 	std::cout << GRN "Cat: " RESET " DesTRUCTOR " << this << std::endl;
 }
 
-void Cat::makeSound( void ) {
+void Cat::makeSound( void ) const {
 	std::cout << "mIaauu mIauuuu" << std::endl;
 }

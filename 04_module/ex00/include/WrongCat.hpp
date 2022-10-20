@@ -11,7 +11,7 @@ class WrongCat : public WrongAnimal {
 		WrongCat & operator=( WrongCat const & d);
 
 		// Functions member
-		void	makeSound( void );
+		void	makeSound( void ) const;
 };
 
 #endif
