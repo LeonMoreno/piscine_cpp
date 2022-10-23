@@ -37,7 +37,6 @@ Form::Form(std::string const name, bool si, int const gradeSing, int const grade
 	_sign(si),
 	_gradeRequiredSign(cheRGrade(gradeSing)),
 	_gradeRequiredEx(cheRGrade(gradeEx)) {
-	//cheRGrade(gradeSing);
 	// std::cout << "Form INT Constructor " << this << std::endl;
 }
 
@@ -65,18 +64,18 @@ int	Form::getGradeRequiredEx(void) const {
 /*		Members functions		*/
 /********************************/
 int	Form::cheRGrade(int n) {
-	try {
+	// try {
 		if (n < 1)
 			throw Form::GradeTooLowException();
-		else if (n > 100)
+		else if (n > 150)
 			throw Form::GradeTooHighException();
 		else
 			return (n);
-	}
-	catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
-	return (150);
+	// }
+	// catch (std::exception& e) {
+	// 	std::cout << e.what() << std::endl;
+	// }
+	// return (150);
 }
 
 void	Form::beSigned(Bureaucrat b) {
@@ -90,7 +89,9 @@ void	Form::beSigned(Bureaucrat b) {
 	{
 		std::cout << b.getName() << " couldn't sign ";
 		std::cout << this->getName() << " because son grade is ";
-		std::cout << b.getGrade() << std::endl;
+		std::cout << b.getGrade();
+		std::cout <<  " and this form need at least grade " << this->getGradeRequiredSign();
+		std::cout << std::endl;
 	}
 
 }

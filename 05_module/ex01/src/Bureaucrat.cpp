@@ -19,7 +19,6 @@ Bureaucrat::~Bureaucrat() {
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
 //	std::cout << "Bureaucrat INT Constructor " << this << std::endl;
 	checkGrade(grade);
-	std::cout << "Hi Minsu\n";
 	}
 
 /* Operator Overload for canonical */
@@ -72,19 +71,19 @@ int	Bureaucrat::getGrade() const {
 /*		Members functions		*/
 /********************************/
 
+/* Cambio hecho despues de terminar este ex01 y hablar con minsu*/
 void	Bureaucrat::checkGrade(int n) {
-	try {
+	// try {
 	if (n < 1)
 		throw Bureaucrat::GradeTooLowException();
 	else if (n > 150)
 		throw Bureaucrat::GradeTooHighException();
 	else
 		this->_grade = n;
-	}
-	catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
-
+	// }
+	// catch (std::exception& e) {
+	// 	std::cout << e.what() << std::endl;
+	// }
 }
 
 Bureaucrat	Bureaucrat::upGrade(int n) {
