@@ -2,23 +2,23 @@
 
 /* Constructor and Destructor */
 Fixed::Fixed( void ) : _fixPointNum(0) {
-	// std::cout << "Default Constructor called" << std::endl;
+	std::cout << "Default Constructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed( Fixed const & src ) {
-	// std::cout << "Copy Constructor called" << std::endl;
+	std::cout << "Copy Constructor called" << std::endl;
 	*this = src;
 	return ;
 }
 
 Fixed::~Fixed( void ) {
-	// std::cout << "DEStructor called" << std::endl;
+	std::cout << "DEStructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed( int const num ) {
-	// std::cout << "INT Constructor called" << std::endl;
+	std::cout << "INT Constructor called" << std::endl;
 	this->setRawBits(num  << _fractBits);
 }
 

@@ -13,12 +13,13 @@ Bureaucrat::Bureaucrat(Bureaucrat const & src) : _name(src._name), _grade(src._g
 }
 
 Bureaucrat::~Bureaucrat() {
-	// std::cout << "Bureaucrat DesTRUCTOR " << this << std::endl;
+//	std::cout << "Bureaucrat DesTRUCTOR " << this << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
-	// std::cout << "Bureaucrat INT Constructor " << this << std::endl;
+//	std::cout << "Bureaucrat INT Constructor " << this << std::endl;
 	checkGrade(grade);
+	std::cout << "Hi Minsu\n";
 	}
 
 /* Operator Overload for canonical */
@@ -71,21 +72,19 @@ int	Bureaucrat::getGrade() const {
 /*		Members functions		*/
 /********************************/
 
-/* Despues de hablar con Minsu entendi que estba con un error
- q el try lo hago en  el main, asi logro q ni si quiera se
- logre crear el Bureucrat */
 void	Bureaucrat::checkGrade(int n) {
-	// try {
+	try {
 	if (n < 1)
 		throw Bureaucrat::GradeTooLowException();
 	else if (n > 150)
 		throw Bureaucrat::GradeTooHighException();
 	else
 		this->_grade = n;
-	// }
-	// catch (std::exception& e) {
-	// 	std::cout << e.what() << std::endl;
-	// }
+	}
+	catch (std::exception& e) {
+		std::cout << e.what() << std::endl;
+	}
+
 }
 
 Bureaucrat	Bureaucrat::upGrade(int n) {
@@ -96,6 +95,10 @@ Bureaucrat	Bureaucrat::upGrade(int n) {
 Bureaucrat	Bureaucrat::downGrade(int n) {
 	checkGrade(this->getGrade() + n);
 	return (*this);
+}
+
+void	Bureaucrat::signForm() {
+	std::cout << this->getName() << " signed ";
 }
 
 /* Remplazadas con nested classes

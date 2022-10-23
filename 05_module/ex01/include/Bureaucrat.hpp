@@ -24,8 +24,6 @@ public:
 	Bureaucrat	operator--(void);
 	Bureaucrat	operator--(int);
 
-
-
 	/* Setters and Getters */
 	std::string	getName() const;
 	int			getGrade() const;
@@ -34,6 +32,7 @@ public:
 	Bureaucrat	upGrade(int n);
 	Bureaucrat	downGrade(int n);
 	void	checkGrade(int n);
+	void	signForm();
 	//void	GradeTooLowException(void);
 
 	/* nested classes */
