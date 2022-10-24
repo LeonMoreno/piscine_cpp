@@ -3,7 +3,7 @@
 int	main(void)
 {
 	try {
-		Bureaucrat l("Leo", 7);
+		Bureaucrat l("Fercho", 7);
 		std::cout << l << std::endl;
 		std::cout << l.downGrade(143) << std::endl;
 		++l;
@@ -15,7 +15,7 @@ int	main(void)
 
 	std::cout << "\n\t Try High "  << std::endl;
 	try {
-		Bureaucrat l("AP", 151); // no ejecuta de aqui pa abajo.
+		Bureaucrat l("Fercho", 151); // no ejecuta de aqui pa abajo.
 		std::cout << l << std::endl;
 		std::cout << --l << std::endl;
 		std::cout << l-- << std::endl;
@@ -26,7 +26,7 @@ int	main(void)
 
 	std::cout << "\n\t Try Low "  << std::endl;
 	try {
-		Bureaucrat l("AP", 7);
+		Bureaucrat l("Fercho", 7);
 		std::cout << l-- << std::endl;
 		std::cout << l << std::endl;
 		std::cout << l.upGrade(7) << std::endl;

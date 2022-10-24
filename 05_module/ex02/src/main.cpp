@@ -1,48 +1,27 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int	main(void)
 {
 	try {
 		Bureaucrat f("Fercho", 7);
 	 	std::cout << f << std::endl;
-		Form p("predial", 0, 6, 43);
-		std::cout << p << std::endl;
+		// Form p("predial", 0, 6, 43);
+		ShrubberyCreationForm s;
+		//std::cout << p << std::endl;
 		//f.upGrade(42); No se ejecutaria lo next !!
-		p.beSigned(f);
-		std::cout << p << std::endl;
+		//p.beSigned(f);
+		//std::cout << p << std::endl;
 	}
 	catch (std::exception& e) {
 		std::cout << e.what() << std::endl;
 	}
 
 	std::cout << "\n\t Try sign done "  << std::endl;
-	try {
-		Bureaucrat ap("Fercho", 42);
-		std::cout << ap.upGrade(10) << std::endl;
-		// std::cout << --ap << std::endl;
-		// std::cout << --ap << std::endl;
-		Form r("register", 0, 30, 100);
-		r.beSigned(ap);
-	}
-	catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
+
 
 	std::cout << "\n\t Try sing copy "  << std::endl;
-	try {
-		Bureaucrat ap("AP", 42);
-		std::cout << ap.upGrade(10) << std::endl;
-		// std::cout << --ap << std::endl;
-		// std::cout << --ap << std::endl;
-		Form r("register", 0, 30, 100);
-		Form copy(r);
-		std::cout << copy << std::endl;
-		copy.beSigned(ap);
-	}
-	catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
 
 
 	// p.beSigned(l);
