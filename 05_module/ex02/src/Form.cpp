@@ -11,7 +11,7 @@ _name("nameless"),
 _sign(false),
 _gradeRequiredSign(150),
 _gradeRequiredEx(150) {
-	// std::cout << "Form Default Constructor " << this << std::endl;
+	std::cout << "Form Default Constructor " << this << std::endl;
 }
 
 Form::Form(Form const & src) :
@@ -23,7 +23,7 @@ _gradeRequiredEx(src._gradeRequiredEx) {
 }
 
 Form::~Form() {
-	// std::cout << "Form DesTRUCTOR " << this << std::endl;
+	std::cout << "Form DesTRUCTOR " << this << std::endl;
 }
 
 Form & Form::operator=(Form const & rhs) {
@@ -37,7 +37,7 @@ Form::Form(std::string const name, bool si, int const gradeSing, int const grade
 	_sign(si),
 	_gradeRequiredSign(cheRGrade(gradeSing)),
 	_gradeRequiredEx(cheRGrade(gradeEx)) {
-	// std::cout << "Form INT Constructor " << this << std::endl;
+	std::cout << "Form INT Constructor " << this << std::endl;
 }
 
 /********************************/
@@ -58,6 +58,10 @@ int	Form::getGradeRequiredSign(void) const {
 
 int	Form::getGradeRequiredEx(void) const {
 	return (this->_gradeRequiredEx);
+}
+
+void	Form::setSign(void) {
+	this->_sign = 0;
 }
 
 /********************************/

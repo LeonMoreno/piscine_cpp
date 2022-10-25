@@ -27,11 +27,14 @@ class Triangle : public Polygon {
 };
 
 int main( void ) {
-	Rectangle	rect;
-	Triangle	tri;
+	// Rectangle	rect;
+	// Triangle	tri;
 
-	Polygon * ptr1 = &rect;
-	Polygon * ptr2 = &tri;
+	// Polygon * ptr1 = &rect;
+	// Polygon * ptr2 = &tri;
+
+	Polygon *ptr1 = new Rectangle();
+	Polygon *ptr2 = new Triangle();
 
 	std::cout << "size Poly = " << sizeof(Polygon) << std::endl;
 
@@ -42,9 +45,10 @@ int main( void ) {
 	ptr1->set_values(4, 5);
 	ptr2->set_values(4,5);
 
+	// La funcion area no existe en Polygon
 	// Es por lo anterio que aqui no puedeo acceder desde el PTR;
-	std::cout << rect.area() << std::endl;
-	std::cout << tri.area() << std::endl;
+	std::cout << ptr1->area() << std::endl;
+	std::cout << ptr2->area() << std::endl;
 	return (0);
 
 }

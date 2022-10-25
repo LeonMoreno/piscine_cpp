@@ -1,22 +1,21 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP_
 #define SHRUBBERYCREATIONFORM_HPP_
 
-#pragma once
 #include "Form.hpp"
 
-class ShrubberyCreationForm : public Form{
+class ShrubberyCreationForm : public Form {
 private:
 /* data */
-	bool				_sign;
+	std::string	_dst;
 public:
 	ShrubberyCreationForm(void);
 	ShrubberyCreationForm(ShrubberyCreationForm const & src);
-	ShrubberyCreationForm & operator=(ShrubberyCreationForm const & rhs);
 	~ShrubberyCreationForm(void);
+	ShrubberyCreationForm(std::string dst);
 
-	void	beSigned(ShrubberyCreationForm b);
 
-	// Getters and Setters
+	/* Operator OverLoad Canonical =*/
+	ShrubberyCreationForm & operator=(ShrubberyCreationForm const & rhs);
 };
 
 #endif

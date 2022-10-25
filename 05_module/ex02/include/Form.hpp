@@ -11,7 +11,7 @@ private:
 /* attributes */
 	std::string	const	_name;
 	bool				_sign;
-	int	const			_gradeRequiredSign;
+	int	const		_gradeRequiredSign;
 	int	const			_gradeRequiredEx;
 
 public:
@@ -25,13 +25,14 @@ public:
 
 	/* members functions */
 	int		cheRGrade(int n);
-	virtual void	beSigned(Bureaucrat b) = 0;
+	void	beSigned(Bureaucrat b);
 
 	/* Getter and Setters*/
 	std::string	getName(void) const;
 	bool		getSign(void) const;
 	int			getGradeRequiredSign(void) const;
 	int			getGradeRequiredEx(void) const;
+	void		setSign(void);
 
 	/* nested classes */
 	class GradeTooHighException : public std::exception {

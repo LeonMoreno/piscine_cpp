@@ -20,8 +20,8 @@ public:
 	// std::string	getName(void);
 	std::string	getType(void);
 
-
-	// void doSound(void);
+	/* funciones miembro */
+	void doSound(void);
 };
 
 

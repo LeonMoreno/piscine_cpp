@@ -41,6 +41,11 @@ std::string	Animal::getName(void) {
 	return (this->_name);
 }
 
+std::string	Animal::getType(void) {
+	std::string type = "Anima: getType";
+	return (type);
+}
+
 /* Members functions*/
 void Animal::doSound(void) {
 	std::cout << "AniCAL AniCAL " << this << std::endl;

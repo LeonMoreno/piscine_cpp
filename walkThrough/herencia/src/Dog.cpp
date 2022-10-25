@@ -27,3 +27,8 @@ Dog::~Dog()
 std::string	Dog::getType(void) {
 	return (this->_type);
 }
+
+/* Funciones miembro*/
+void	Dog::doSound(void) {
+	std::cout << "GuaGua Guauuu" << std::endl;
+}

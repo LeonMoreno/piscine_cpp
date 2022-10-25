@@ -12,7 +12,7 @@ public:
 	Animal(void);
 	Animal (Animal const & src);
 	Animal(std::string name, int legs);
-	~Animal();
+	virtual ~Animal();
 
 	Animal & operator=(Animal const & rhs);
 
@@ -21,6 +21,7 @@ public:
 	std::string	getName(void);
 
 	void doSound(void);
+	virtual std::string	getType(void) = 0;
 };
 
 
