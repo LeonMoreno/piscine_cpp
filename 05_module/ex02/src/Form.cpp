@@ -6,73 +6,73 @@
 /*	Constructors and Destructors */
 /*********************************/
 
-Form::Form(void) :
+AForm::AForm(void) :
 _name("nameless"),
 _sign(false),
 _gradeRequiredSign(150),
 _gradeRequiredEx(150) {
-	std::cout << "Form Default Constructor " << this << std::endl;
+	// std::cout << "AForm Default Constructor " << this << std::endl;
 }
 
-Form::Form(Form const & src) :
+AForm::AForm(AForm const & src) :
 _name(src._name),
 _sign(src._sign),
 _gradeRequiredSign(src._gradeRequiredSign),
 _gradeRequiredEx(src._gradeRequiredEx) {
-	std::cout << "Form copy Constructor " << this << std::endl;
+	// std::cout << "AForm copy Constructor " << this << std::endl;
 }
 
-Form::~Form() {
-	std::cout << "Form DesTRUCTOR " << this << std::endl;
+AForm::~AForm() {
+	// std::cout << "AForm DesTRUCTOR " << this << std::endl;
 }
 
-Form & Form::operator=(Form const & rhs) {
-	// std::cout << "Form asignation Constructor " << this << std::endl;
+AForm & AForm::operator=(AForm const & rhs) {
+	// std::cout << "AForm asignation Constructor " << this << std::endl;
 	this->_sign = rhs.getSign();
 	return (*this);
 }
 
-Form::Form(std::string const name, bool si, int const gradeSing, int const gradeEx) :
+AForm::AForm(std::string const name, bool si, int const gradeSing, int const gradeEx) :
 	_name(name),
 	_sign(si),
 	_gradeRequiredSign(cheRGrade(gradeSing)),
 	_gradeRequiredEx(cheRGrade(gradeEx)) {
-	std::cout << "Form INT Constructor " << this << std::endl;
+	// std::cout << "AForm INT Constructor " << this << std::endl;
 }
 
 /********************************/
 /* 		Setters and Getters		*/
 /********************************/
 
-std::string	Form::getName(void) const {
+std::string	AForm::getName(void) const {
 	return (this->_name);
 }
 
-bool	Form::getSign(void) const {
+bool	AForm::getSign(void) const {
 	return (this->_sign);
 }
 
-int	Form::getGradeRequiredSign(void) const {
+int	AForm::getGradeRequiredSign(void) const {
 	return (this->_gradeRequiredSign);
 }
 
-int	Form::getGradeRequiredEx(void) const {
+int	AForm::getGradeRequiredEx(void) const {
 	return (this->_gradeRequiredEx);
 }
 
-void	Form::setSign(void) {
-	this->_sign = 0;
+void	AForm::setSign(void) {
+	this->_sign = true;
 }
 
 /********************************/
 /*		Members functions		*/
 /********************************/
-int	Form::cheRGrade(int n) {
+int	AForm::cheRGrade(int n) {
 	// try {
 		if (n < 1)
-			throw Form::GradeTooLowException();
+			throw AForm::GradeTooLowException();
 		else if (n > 150)
-			throw Form::GradeTooHighException();
+			throw AForm::GradeTooHighException();
 		else
 			return (n);
 	// }
@@ -82,28 +82,55 @@ int	Form::cheRGrade(int n) {
 	// return (150);
 }
 
-void	Form::beSigned(Bureaucrat b) {
-	if (b.getGrade() <= this->_gradeRequiredSign)
+void	AForm::execute(Bureaucrat const & executor) {
+	(void) executor;
+	if (this->getSign() == false)
+		throw AForm::FormNotSignedException();
+	if (executor.getGrade() >= this->getGradeRequiredEx())
 	{
-		this->_sign = true;
-		b.signForm();
-		std::cout << this->getName() << std::endl;
-	}
-	else
-	{
-		std::cout << b.getName() << " couldn't sign ";
+		std::cout << executor.getName() << " couldn't execute ";
 		std::cout << this->getName() << " because son grade is ";
-		std::cout << b.getGrade();
-		std::cout <<  " and this form need at least grade " << this->getGradeRequiredSign();
+		std::cout << executor.getGrade();
+		std::cout <<  " and this AForm need at least grade " << this->getGradeRequiredEx();
 		std::cout << std::endl;
+		throw AForm::GradeTooLowException();
 	}
-
+	this->execution(executor);
+	executor.executeForm(*this);
 }
+
+void	AForm::execution(Bureaucrat executor) {
+	std::cout <<  "AForm: Execution " << executor.getName();
+}
+
+/* GRAN GRAN punto a remarcar
+virtual beSigned = 0
+--> lo convierte en un metodo puro
+--> El metodo no se puede implementar
+--> La clase devien Abstracta */
+
+// void	AForm::beSigned(Bureaucrat b) {
+// 	if (b.getGrade() <= this->_gradeRequiredSign)
+// 	{
+// 		this->_sign = true;
+// 		b.signAForm();
+// 		std::cout << this->getName() << std::endl;
+// 	}
+// 	else
+// 	{
+// 		std::cout << b.getName() << " couldn't sign ";
+// 		std::cout << this->getName() << " because son grade is ";
+// 		std::cout << b.getGrade();
+// 		std::cout <<  " and this AForm need at least grade " << this->getGradeRequiredSign();
+// 		std::cout << std::endl;
+// 	}
+
+// }
 
 /* Operator Overload  << */
 
-std::ostream & operator<<(std::ostream & out, Form const & f) {
-	out << "Form: " << f.getName() << " | ";
+std::ostream & operator<<(std::ostream & out, AForm const & f) {
+	out << "AForm: " << f.getName() << " | ";
 	out << "Sing: " << f.getSign() << " | ";
 	out << "grade sing: " << f.getGradeRequiredSign() << " | ";
 	out << "grade exe: " << f.getGradeRequiredEx();

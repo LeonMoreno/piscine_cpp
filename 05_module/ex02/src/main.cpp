@@ -4,54 +4,58 @@
 
 int	main(void)
 {
-	std::cout << "\t Try Form Basic sign done "  << std::endl;
+	// std::cout << "\t Try Form Basic sign done "  << std::endl;
 
-	try {
-		Bureaucrat f("Fercho", 7);
-	 	std::cout << f << std::endl;
-		Form p("predial", 0, 6, 43);
-		std::cout << p << std::endl;
-		//f.upGrade(42); No se ejecutaria lo next !!
-		p.beSigned(f);
-		std::cout << p << std::endl;
-	}
-	catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
+	// try {
+	// 	Bureaucrat f("Fercho", 7);
+	//  	std::cout << f << std::endl;
+	// 	AForm p("predial", 0, 6, 43);
+	// 	std::cout << p << std::endl;
+	// 	//f.upGrade(42); No se ejecutaria lo next !!
+	// 	p.beSigned(f);
+	// 	std::cout << p << std::endl;
+	// }
+	// catch (std::exception& e) {
+	// 	std::cout << e.what() << std::endl;
+	// }
 
-	std::cout << "\n\t Try Form Basic sign done "  << std::endl;
-	try {
-		Bureaucrat ap("Fercho", 42);
-		std::cout << ap.upGrade(10) << std::endl;
-		// std::cout << --ap << std::endl;
-		// std::cout << --ap << std::endl;
-		Form r("register", 0, 30, 100);
-		r.beSigned(ap);
-	}
-	catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
+	// std::cout << "\n\t Try Form Basic sign done "  << std::endl;
+	// try {
+	// 	Bureaucrat ap("Fercho", 42);
+	// 	std::cout << ap.upGrade(10) << std::endl;
+	// 	// std::cout << --ap << std::endl;
+	// 	// std::cout << --ap << std::endl;
+	// 	Form r("register", 0, 30, 100);
+	// 	r.beSigned(ap);
+	// }
+	// catch (std::exception& e) {
+	// 	std::cout << e.what() << std::endl;
+	// }
 
-	std::cout << "\n\t Try Form Basic sing copy "  << std::endl;
-	try {
-		Bureaucrat ap("AP", 42);
-		std::cout << ap.upGrade(10) << std::endl;
-		// std::cout << --ap << std::endl;
-		// std::cout << --ap << std::endl;
-		Form r("register", 0, 30, 100);
-		Form copy(r);
-		std::cout << copy << std::endl;
-		copy.beSigned(ap);
-	}
-	catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
+	// std::cout << "\n\t Try Form Basic sing copy "  << std::endl;
+	// try {
+	// 	Bureaucrat ap("AP", 42);
+	// 	std::cout << ap.upGrade(10) << std::endl;
+	// 	// std::cout << --ap << std::endl;
+	// 	// std::cout << --ap << std::endl;
+	// 	Form r("register", 0, 30, 100);
+	// 	Form copy(r);
+	// 	std::cout << copy << std::endl;
+	// 	copy.beSigned(ap);
+	// }
+	// catch (std::exception& e) {
+	// 	std::cout << e.what() << std::endl;
+	// }
 	std::cout << "\n\t Try Form Shrubbery sing copy "  << std::endl;
 	try {
-		Bureaucrat fer("Fercho", 42);
+		Bureaucrat fer("Fercho", 132);
 		ShrubberyCreationForm b1;
 		ShrubberyCreationForm b2("escuela");
 		std::cout << b1 << std::endl;
+		std::cout << b2 << std::endl;
+		b2.beSigned(fer);
+		std::cout << b2 << std::endl;
+		b2.execute(fer);
 	}
 	catch (std::exception & e) {
 		std::cout << e.what() << std::endl;

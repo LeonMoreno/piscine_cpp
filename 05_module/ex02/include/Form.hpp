@@ -1,12 +1,12 @@
-#ifndef FORM_HPP_
-#define FORM_HPP_
+#ifndef AFORM_HPP_
+#define AFORM_HPP_
 
 #include <iostream>
 
 // #include "Bureaucrat.hpp"
 class Bureaucrat; // Lo hago asi para q no cree conflicto.
 
-class Form {
+class AForm {
 private:
 /* attributes */
 	std::string	const	_name;
@@ -15,17 +15,19 @@ private:
 	int	const			_gradeRequiredEx;
 
 public:
-	Form(void);
-	Form(Form const & src);
-	Form(std::string const, bool, int const, int const);
-	~Form(void);
+	AForm(void);
+	AForm(AForm const & src);
+	AForm(std::string const, bool, int const, int const);
+	~AForm(void);
 
 	/* Operator overload for canonical*/
-	Form & operator=(Form const & rhs);
+	AForm & operator=(AForm const & rhs);
 
 	/* members functions */
 	int		cheRGrade(int n);
-	void	beSigned(Bureaucrat b);
+	void	execute(Bureaucrat const & executor);
+	virtual void	beSigned(Bureaucrat b) = 0;
+	virtual void	execution(Bureaucrat executor);
 
 	/* Getter and Setters*/
 	std::string	getName(void) const;
@@ -42,8 +44,11 @@ public:
 	class GradeTooLowException : public std::exception {
 		virtual const char* what() const throw();
 	};
+	class FormNotSignedException : public std::exception {
+		virtual const char* what() const throw();
+	};
 };
 
 #endif
 
-std::ostream & operator<<(std::ostream & out, Form const & f);
+std::ostream & operator<<(std::ostream & out, AForm const & f);

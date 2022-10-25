@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+#include "Form.hpp"
+
 class Bureaucrat
 {
 private:
@@ -33,6 +35,10 @@ public:
 	Bureaucrat	downGrade(int n);
 	void	checkGrade(int n);
 	void	signForm();
+	/*	AForm por que al cambiar Form a Abstrac cambie el nombre
+		debe ser const por que se llama desde AForm::execute(Bureaucrat const & executor)
+		y en este funcion el Bureaucrat es const & executor */
+	void	executeForm(AForm const & form) const;
 	//void	GradeTooLowException(void);
 
 	/* nested classes */

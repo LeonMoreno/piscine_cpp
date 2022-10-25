@@ -100,14 +100,10 @@ void	Bureaucrat::signForm() {
 	std::cout << this->getName() << " signed ";
 }
 
-/* Remplazadas con nested classes
-void	Bureaucrat::GradeTooLowException(void) {
-	std::cout << "Grade Too Low Exception" << std::endl;
+void	Bureaucrat::executeForm(AForm const & form) const { 
+	std::cout << this->getName() << " executed ";
+	std::cout << form.getName() << std::endl;
 }
-
-void	Bureaucrat::GradeTooHighException(void) {
-	std::cout << "Grade Too High Exception" << std::endl;
-} */
 
 
 /* Operator Overload  << */
