@@ -1,5 +1,5 @@
 #Variables
-NAME		= Form28x
+NAME		= Coffee-Making
 SRC_DIR		= src/
 OBJ_DIR		= obj/
 #CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic -I include/
