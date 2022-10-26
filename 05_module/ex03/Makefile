@@ -8,7 +8,7 @@ CC 			= c++
 RM 			= rm -fr
 
 #Souces FIles
-SRC_FILES	= main Bureaucrat Myexceptions Form MyexceptionsForm ShrubberyCreationForm RobotomyRequestForm PresidentialPardonForm
+SRC_FILES	= main Bureaucrat Myexceptions Form MyexceptionsForm ShrubberyCreationForm RobotomyRequestForm PresidentialPardonForm Intern MyexceptionsInter
 
 #OBJS
 ##OBJ = $(SRC:.cpp=.o)
