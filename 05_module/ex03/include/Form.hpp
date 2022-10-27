@@ -18,7 +18,7 @@ public:
 	AForm(void);
 	AForm(AForm const & src);
 	AForm(std::string const, bool, int const, int const);
-	~AForm(void);
+	virtual ~AForm(void);
 
 	/* Operator overload for canonical*/
 	AForm & operator=(AForm const & rhs);

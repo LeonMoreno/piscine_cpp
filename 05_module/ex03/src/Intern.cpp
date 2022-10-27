@@ -29,6 +29,11 @@ Intern::~Intern() {
 /********************************/
 /* 		Setters and Getters		*/
 /********************************/
+
+/********************************/
+/*		Members functions		*/
+/********************************/
+
 AForm  *Intern::makeForm(std::string form, std::string dest) {
 	AForm *f;
 
@@ -48,8 +53,6 @@ AForm  *Intern::makeForm(std::string form, std::string dest) {
 		throw Intern::FormDontExist();
 		break;
 	}
-	std::cout << "res = " << checkForm(form) << std::endl;
-
 	return (f);
 }
 
@@ -59,16 +62,11 @@ int	Intern::checkForm(std::string form) {
 
 	res = 0;
 	i = 0;
-	while (form[i] != '\0')
+	while (form[i] != '\0' && (form == "robotomy request" ||
+		form == "presidential pardon" || form == "shrubbery creation"))
 	{
 		res += (int)form[i];
 		i++;
 	}
 	return (res);
 }
-
-
-
-/********************************/
-/*		Members functions		*/
-/********************************/

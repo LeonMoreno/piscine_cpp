@@ -111,6 +111,19 @@ int	main(void)
 	catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
+			std::cout << "\n\t Try Form Presidential PardonForm sing Fail"  << std::endl;
+	try {
+		Bureaucrat	fer("Fercho", 26);
+		Bureaucrat	ap("AP", 5);
+		PresidentialPardonForm b1("escuelita");
+		std::cout << b1 << std::endl;
+		b1.beSigned(fer);
+		std::cout << b1 << std::endl;
+		b1.execute(ap);
+	}
+	catch (std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
 
 	return (0);
 }

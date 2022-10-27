@@ -58,6 +58,7 @@ void	RobotomyRequestForm::beSigned(Bureaucrat b) {
 		std::cout << b.getGrade();
 		std::cout <<  " and this form need at least grade " << this->getGradeRequiredSign();
 		std::cout << std::endl;
+		throw AForm::GradeTooLowException();
 	}
 }
 
