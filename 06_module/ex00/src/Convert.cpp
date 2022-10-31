@@ -51,9 +51,9 @@ Convert::operator char() {
 		catch(std::invalid_argument & sia) {
 			c = (this->getArgu()[0]);
 			if (std::isprint(c))
-				std::cout << "char : " << static_cast<char>(c) << std::endl;
+				std::cout << "char	: " << static_cast<char>(c) << std::endl;
 			else
-				std::cout << "char : " << "Non displayable" << std::endl;
+				std::cout << "char	: " << "Non displayable" << std::endl;
 			return (c);
 		}
 	}
@@ -63,18 +63,18 @@ Convert::operator char() {
 			c = std::stoi(this->getArgu());
 		}
 		catch (std::invalid_argument & sia) {
-			std::cout << "char : " << "no conversion" << std::endl;
+			std::cout << "char	: " << "no conversion" << std::endl;
 			return (c);
 		}
 		catch (std::out_of_range & sur) {
-			std::cout << "char : " << "out of range" << std::endl;
+			std::cout << "char	: " << "out of range" << std::endl;
 			return (c);
 		}
 	}
 	if (std::isprint(c))
-		std::cout << "char : " << static_cast<char>(c) << std::endl;
+		std::cout << "char	: " << static_cast<char>(c) << std::endl;
 	else
-			std::cout << "char : " << "imposible" << std::endl;
+			std::cout << "char	: " << "imposible" << std::endl;
 	return (c);
 }
 
@@ -86,11 +86,53 @@ Convert::operator int() {
 		n = std::stoi(this->getArgu());
 	}
 	catch (std::invalid_argument & sia) {
-		std::cout << "int  : " << "no conversion" << std::endl;
+		std::cout << "int	: " << "no conversion" << std::endl;
+		return (n);
 	}
-	if (n)
-		std::cout << "int  : " << n << std::endl;
+	catch (std::out_of_range & sia) {
+		std::cout << "int	: " << "out or range" << std::endl;
+		return (n);
+	}
+	std::cout << "int	: " << n << std::endl;
 	return (static_cast<int>(n));
+}
+
+Convert::operator float() {
+	float	n;
+
+	std::cout << std::fixed;
+	std::cout.precision(1);
+	n = 0;
+	try {
+		n = std::stof(this->getArgu());
+	}
+	catch (std::invalid_argument & sia) {
+		std::cout << "float	: " << "no conversion" << std::endl;
+	}
+	catch (std::out_of_range & sia) {
+		std::cout << "float	: " << "out or range" << std::endl;
+	}
+	std::cout << "float	: " << n << "f" << std::endl;
+	return (static_cast<float>(n));
+}
+
+Convert::operator double() {
+	double	n;
+
+	std::cout << std::fixed;
+	std::cout.precision(1);
+	n = 0;
+	try {
+		n = std::stod(this->getArgu());
+	}
+	catch (std::invalid_argument & sia) {
+		std::cout << "double	: " << "no conversion" << std::endl;
+	}
+	catch (std::out_of_range & sia) {
+		std::cout << "double	: " << "out or range" << std::endl;
+	}
+	std::cout << "double	: " << n << std::endl;
+	return (static_cast<float>(n));
 }
 
 

@@ -11,11 +11,14 @@ int	main(int argc, char **argv) {
 		}
 	else
 		lite = new Convert(argv[1]);
-	//std::cout << std::fixed;
-	//std::cout.precision(2);
+	// std::cout << std::fixed;
+	// std::cout.precision(1);
 
 	char	c = *lite;
 	int		n = *lite;
+	float	f = *lite;
+	double	d = *lite;
+
 
 	// std::cout << c << std::endl;
 	//std::cout << n << std::endl;

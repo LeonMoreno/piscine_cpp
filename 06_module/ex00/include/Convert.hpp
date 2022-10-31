@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <locale>
+# include <string>
 
 class Convert {
 private:
