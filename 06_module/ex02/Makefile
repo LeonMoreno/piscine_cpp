@@ -1,14 +1,15 @@
 #Variables
-NAME		= Convert
+NAME		= IdentifyRealType
 SRC_DIR		= src/
 OBJ_DIR		= obj/
 # CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic -Wno-unused -I include/
-CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -Wno-unused -I include/
+# CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -Wno-unused -I include/
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++11 -Wno-unused -I include/
 CC 			= c++
 RM 			= rm -fr
 
 #Souces FIles
-SRC_FILES	= main Convert
+SRC_FILES	= main Base A B C
 
 #OBJS
 ##OBJ = $(SRC:.cpp=.o)
