@@ -3,8 +3,7 @@ NAME		= Serialization
 SRC_DIR		= src/
 OBJ_DIR		= obj/
 # CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic -Wno-unused -I include/
-# CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -Wno-unused -I include/
-CPPFLAGS	= -Wall -Wextra -Werror -std=c++11 -Wno-unused -I include/
+CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -Wno-unused -I include/
 CC 			= c++
 RM 			= rm -fr
 

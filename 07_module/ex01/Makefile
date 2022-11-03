@@ -1,5 +1,5 @@
 #Variables
-NAME		= IdentifyRealType
+NAME		= Iter
 SRC_DIR		= src/
 OBJ_DIR		= obj/
 # CPPFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic -Wno-unused -I include/
@@ -8,7 +8,7 @@ CC 			= c++
 RM 			= rm -fr
 
 #Souces FIles
-SRC_FILES	= main Base A B C
+SRC_FILES	= main
 
 #OBJS
 ##OBJ = $(SRC:.cpp=.o)
