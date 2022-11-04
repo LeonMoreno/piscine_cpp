@@ -108,9 +108,11 @@ Convert::operator float() {
 	}
 	catch (std::invalid_argument & sia) {
 		std::cout << "float	: " << "no conversion" << std::endl;
+		return (n);
 	}
 	catch (std::out_of_range & sia) {
 		std::cout << "float	: " << "out or range" << std::endl;
+		return (n);
 	}
 	std::cout << "float	: " << n << "f" << std::endl;
 	return (static_cast<float>(n));
@@ -127,6 +129,7 @@ Convert::operator double() {
 	}
 	catch (std::invalid_argument & sia) {
 		std::cout << "double	: " << "no conversion" << std::endl;
+		return (n);
 	}
 	catch (std::out_of_range & sia) {
 		std::cout << "double	: " << "out or range" << std::endl;

@@ -65,7 +65,7 @@ int	main(void)
 		Intern		rada;
 		AForm		*f;
 
-		f = rada.makeForm("presidential pardno", "escuelita"); // pardon esta mal escrito
+		f = rada.makeForm("presidential pardno", "El Central"); // pardon esta mal escrito
 		std::cout << reinterpret_cast<PresidentialPardonForm &>(*f) << std::endl;
 		f->beSigned(fer);
 		std::cout << reinterpret_cast<PresidentialPardonForm &>(*f) << std::endl;

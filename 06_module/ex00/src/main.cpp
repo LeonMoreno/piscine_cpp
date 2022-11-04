@@ -1,5 +1,18 @@
 #include "Convert.hpp"
 
+void	ftPrint(Convert &lite)
+{
+	char	c;
+	int		n;
+	float	f;
+	double	d;
+
+	c = static_cast<char>(lite);
+	n = static_cast<int>(lite);
+	f = static_cast<float>(lite);
+	d = static_cast<double>(lite);
+}
+
 int	main(int argc, char **argv) {
 	Convert *lite;
 	std::locale loc;
@@ -11,18 +24,7 @@ int	main(int argc, char **argv) {
 		}
 	else
 		lite = new Convert(argv[1]);
-	// std::cout << std::fixed;
-	// std::cout.precision(1);
-
-	char	c = *lite;
-	int		n = *lite;
-	float	f = *lite;
-	double	d = *lite;
-
-
-	// std::cout << c << std::endl;
-	//std::cout << n << std::endl;
-
+	ftPrint(*lite);
 	delete lite;
 	return (0);
 }

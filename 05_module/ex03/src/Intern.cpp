@@ -62,8 +62,10 @@ int	Intern::checkForm(std::string form) {
 
 	res = 0;
 	i = 0;
-	while (form[i] != '\0' && (form == "robotomy request" ||
-		form == "presidential pardon" || form == "shrubbery creation"))
+	if (!(form == "robotomy request" || form == "presidential pardon"
+		|| form == "shrubbery creation"))
+		return(0);
+	while (form[i] != '\0')
 	{
 		res += (int)form[i];
 		i++;
