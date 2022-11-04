@@ -59,6 +59,6 @@ int	main(void)
 		iter(arr, len, &ftPrint);
 		std::cout << std::endl;
 	}
-
+	return (0);
 }
 
