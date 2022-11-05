@@ -5,7 +5,8 @@
 template <typename T>
 Array<T>::Array() {
 	// std::cout << "Array Default Constructor " << this << std::endl;
-	this->_arr = new T();
+	this->_arr = new T[1];
+	this->_arr[0] = 0;
 	this->_i = 0;
 }
 
@@ -41,7 +42,8 @@ Array<T> & Array<T>::operator=(Array const & rhs) {
 template <typename T>
 Array<T>::~Array() {
 	// std::cout << "Array DesTRUCTOR " << this << std::endl;
-	delete this->_arr;
+	if (this->_arr)
+		delete [] this->_arr;
 }
 
 /********************************/
@@ -66,7 +68,7 @@ unsigned int	Array<T>::size(void) const {
 /********************************/
 template <typename T>
 T & Array<T>::operator[](std::size_t idx) {
-	if (idx < 0 || static_cast<int>(idx) > this->_i)
+	if (static_cast<int>(idx) > this->_i)
 		throw(std::exception());
 	return (this->_arr[idx]);
 }
