@@ -10,14 +10,16 @@ int main() {
   l.push_back(7);
 
   std::list<int>::const_iterator	it;
-  std::list<int>::const_iterator	itf = l.end();
+//   std::list<int>::const_iterator	itf = l.end();
 
-	for (it = l.begin(); it != itf; it++)
-		std::cout << *it << std::endl;
-	std::cout << "size = " << l.max_size() << std::endl;
+	for (it = l.begin(); it != l.end(); it++)
+		std::cout << *it << " ";
+	std::cout << std::endl;
 	l.sort();
-	for (it = l.begin(); it != itf; it++)
-			std::cout << *it << std::endl;
+	for (it = l.begin(); it != l.end(); it++)
+			std::cout << *it << " ";
+	std::cout << std::endl;
+	std::cout << "Max_size = " << l.max_size() << std::endl;
 	std::cout << sizeof(int) << std::endl;
 
 
