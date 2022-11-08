@@ -112,9 +112,18 @@ void	test_04(void) {
 
 int	main(void) {
 
-	test_01(); // empty and INT
-	test_02(); // Construction by copy
-	test_03(); // char
-	test_04(); // Float
+	int	*arr = new int[4];
+
+	arr[0] = 9;
+	arr[5] = 42;
+	arr[15] = 7;
+
+	std::cout << "arr[x} = " << arr[0] << std::endl;
+	std::cout << "arr[x} = " << arr[15] << std::endl;
+
+	// test_01(); // empty and INT
+	// test_02(); // Construction by copy
+	// test_03(); // char
+	// test_04(); // Float
 	return (0);
 }

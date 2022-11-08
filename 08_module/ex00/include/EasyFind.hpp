@@ -2,18 +2,21 @@
 # define EASYFIND_HPP
 
 #include <iostream>
+#include <string>
+#include <algorithm>
+#include <array>
+#include <list>
+#include <vector>
+
 
 template <typename T>
-class EasyFind
-{
-private:
-	EasyFind(void);
-	/* data */
-public:
-	EasyFind(T arg, int f);
-	~EasyFind(void);
-};
+const typename T::iterator	EasyFind(T  &arg, int f) {
 
-#include "EasyFind.tpp"
+	typename T::iterator	it;
+	it = std::find(arg.begin(), arg.end(), f);
+	if (it == arg.end())
+		throw std::out_of_range("number not found");
+	return (it);
+}
 
 #endif
