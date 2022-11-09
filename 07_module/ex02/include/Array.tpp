@@ -15,8 +15,8 @@ Array<T>::Array(unsigned int idx) {
 	std::cout << "Array INT Constructor " << this << std::endl;
 	this->_arr = new T[idx];
 	this->_i = static_cast<int>(idx);
-	for (int j = 0; j < static_cast<int>(idx); j++)
-		this->_arr[j] = j * idx;
+	// for (int j = 0; j < static_cast<int>(idx); j++)
+	// 	this->_arr[j] = (j);
 }
 
 template <typename T>
@@ -43,7 +43,7 @@ template <typename T>
 Array<T>::~Array() {
 	// std::cout << "Array DesTRUCTOR " << this << std::endl;
 	if (this->_arr)
-		delete [] this->_arr;
+		delete []  this->_arr;
 }
 
 /********************************/
