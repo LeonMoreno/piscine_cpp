@@ -12,8 +12,8 @@ private:
 /* data */
 public:
 	MutantStack(void);
-	// MutantStack(MutantStack const & src);
-	// MutantStack & operator=(MutantStack const & rhs);
+	MutantStack(MutantStack const & src);
+	MutantStack & operator=(MutantStack const & rhs);
 	~MutantStack(void);
 
 /*		Members functions		*/

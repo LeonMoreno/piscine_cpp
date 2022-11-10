@@ -4,22 +4,17 @@
 
 template <typename T>
 MutantStack<T>::MutantStack() {
-	std::cout << "MutantStack Default Constructor " << this << std::endl;
+	// std::cout << "MutantStack Default Constructor " << this << std::endl;
 }
 
-// // MutantStack::MutantStack(MutantStack const & src)  {
-// // 	std::cout << "MutantStack copy Constructor " << this << std::endl;
-// // }
-
-// // MutantStack & MutantStack::operator=(MutantStack const & rhs) {
-// // 	std::cout << "MutantStack asignation Constructor " << this << std::endl;
-// // 	//this->type = a.getType();
-// // 	return (*this);
-// // }
+template <typename T>
+MutantStack<T>::MutantStack(MutantStack const & src) : std::stack<T>(src) {
+	// std::cout << "MutantStack copy Constructor " << this << std::endl;
+}
 
 template <typename T>
 MutantStack<T>::~MutantStack() {
-	std::cout << "MutantStack DesTRUCTOR " << this << std::endl;
+	// std::cout << "MutantStack DesTRUCTOR " << this << std::endl;
 }
 
 /********************************/
