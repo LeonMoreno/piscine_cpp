@@ -9,7 +9,7 @@ int	main(void)
 		int	y = 7.0f;
 
 		::swap(x, y);
-		::ft_putvar(x, y);
+		::ft_putvar(x, y); // verificar x y After swap
 		std::cout << "min = " << ::min(x, y) << std::endl;
 		std::cout << "max = " << ::max(x, y) << std::endl;
 	}
@@ -20,7 +20,7 @@ int	main(void)
 		float	y = 0.0989787f;
 
 		::swap(x, y);
-		::ft_putvar(x, y);
+		::ft_putvar(x, y); // verificar x y After swap
 		std::cout << "min = " << ::min(x, y) << std::endl;
 		std::cout << "max = " << ::max(x, y) << std::endl;
 	}
@@ -31,7 +31,7 @@ int	main(void)
 		std::string y = "chaine2";
 
 		::swap(x, y);
-		::ft_putvar(x, y);
+		::ft_putvar(x, y); // verificar x y After swap
 		std::cout << "min = " << ::min(x, y) << std::endl;
 		std::cout << "max = " << ::max(x, y) << std::endl;
 	}
@@ -42,7 +42,7 @@ int	main(void)
 		char y = 'z';
 
 		::swap(x, y);
-		::ft_putvar(x, y);
+		::ft_putvar(x, y); // verificar x y After swap
 		std::cout << "min = " << ::min(x, y) << std::endl;
 		std::cout << "max = " << ::max(x, y) << std::endl;
 	}

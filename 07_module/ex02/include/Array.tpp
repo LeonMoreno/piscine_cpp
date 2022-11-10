@@ -2,12 +2,18 @@
 /*	Constructors and Destructors */
 /*********************************/
 
+/* incialized by default*/
+/* https://en.cppreference.com/w/cpp/language/default_initialization*/
+
 template <typename T>
 Array<T>::Array() {
-	// std::cout << "Array Default Constructor " << this << std::endl;
-	this->_arr = new T[1];
-	this->_arr[0] = 0;
-	this->_i = 0;
+	std::cout << "Array Default Constructor " << this << std::endl;
+	this->_arr = new T();
+	/*an array of n elements
+	initialized by default.
+	no es necesario inicializacion */
+	// this->_arr[0] = 0;
+	// this->_i = 0;
 }
 
 template <typename T>
@@ -15,6 +21,9 @@ Array<T>::Array(unsigned int idx) {
 	std::cout << "Array INT Constructor " << this << std::endl;
 	this->_arr = new T[idx];
 	this->_i = static_cast<int>(idx);
+	/*an array of n elements
+	initialized by default.
+	no es necesario inicializacion */
 	// for (int j = 0; j < static_cast<int>(idx); j++)
 	// 	this->_arr[j] = (j);
 }
