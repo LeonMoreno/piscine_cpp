@@ -16,11 +16,11 @@ public:
 	Span(unsigned int size);
 	Span(Span const & src);
 	~Span(void);
-
 	Span & operator=(Span const & rhs);
+	
 /* 		Setters and Getters		*/
-	int				getCounter(void) ;
-	int				getSize(void) ;
+	int						getCounter(void) ;
+	int						getSize(void) ;
 	std::vector<int>		getVec(void) const;
 
 /*		Members functions		*/
@@ -28,7 +28,7 @@ public:
 	void	addNumber(int num);
 	int		longestSpan(void);
 	int		shortestSpan(void);
-	void		rangetSpan(std::vector<int>::iterator s, std::vector<int>::iterator f);
+	void	rangetSpan(std::vector<int>::iterator s, std::vector<int>::iterator f);
 
 };
 

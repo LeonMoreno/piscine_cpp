@@ -5,19 +5,19 @@
 /*********************************/
 
 Span::Span() :_nSize(0) {
-	std::cout << "Span Default Constructor " << this << std::endl;
+	// std::cout << "Span Default Constructor " << this << std::endl;
 	_vec.reserve(0);
 	_counter = 0;
 }
 
 Span::Span(unsigned int size) : _nSize(size) {
-	std::cout << "Span INt Constructor " << this << std::endl;
+	// std::cout << "Span INt Constructor " << this << std::endl;
 	_vec.reserve(size);
 	_counter = 0;
 }
 
 Span::Span(Span const & src) : _nSize(src._nSize) {
-	std::cout << "Span copy Constructor " << this << std::endl;
+	// std::cout << "Span copy Constructor " << this << std::endl;
 }
 
 Span & Span::operator=(Span const & rhs) {
@@ -27,7 +27,7 @@ Span & Span::operator=(Span const & rhs) {
 }
 
 Span::~Span() {
-	std::cout << "Span DesTRUCTOR " << this << std::endl;
+	// std::cout << "Span DesTRUCTOR " << this << std::endl;
 }
 
 /********************************/
@@ -86,6 +86,8 @@ int	Span::shortestSpan(void) {
 }
 
 void		Span::rangetSpan(std::vector<int>::iterator s, std::vector<int>::iterator f) {
-	for (s; s!= f; s++)
+	std::vector<int>::iterator t;
+
+	for (t = s; t!= f; t++)
 		addNumber(rand() % 10000);
 }
